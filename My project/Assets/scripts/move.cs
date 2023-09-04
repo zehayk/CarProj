@@ -20,14 +20,13 @@ public class move : MonoBehaviour
     float strenght = 50.0f;
     Rigidbody rigidBody;
 
-    public float rpmConvertCoef = 3f / 50f;
     public Car myCar;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        myCar = new Car(140, 7000, 40);
+        myCar = new Car();
         //myCar = new Car(140, 7000, 40, 1550, 0, 2);
         wheels = GameObject.FindGameObjectsWithTag("FrontWheels");
         //foreach (var wheel in wheels) { 
@@ -43,25 +42,10 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float vertical = 0f;// Input.GetAxis("Vertical"); // forward backward
-        float horizontal = 0f;// Input.GetAxis("Horizontal");
-
-        vertical = Input.GetAxis("Jump");
+        float vertical = Input.GetAxis("Vertical"); // forward backward
+        float horizontal = Input.GetAxis("Horizontal");
 
         Debug.Log(vertical);
-
-        /*if (vertical > 0) // accelerate
-        {
-            myCar.accelerate(true);
-        }
-        else if (vertical == 0) // idle throttle
-        {
-            myCar.accelerate(false);
-        }
-        else if (vertical < 0) // reverse/breaking
-        {
-            myCar.accelerate(false, vertical);
-        }*/
 
         myCar.accelerate(vertical);
 
@@ -73,22 +57,15 @@ public class move : MonoBehaviour
 
 
         //float a = Math.Floor(myCar.currentRPM / 10);
-        float speedInKM = (float)Math.Round(myCar.currentSpeed / 10, 1);
+        //float speedInKM = (float)Math.Round(myCar.currentSpeed / 10, 1);
         //float ratio = 2.19f;
-        float ratio = myCar.getGearRatio();
         // double a = Math.Round(((((myCar.currentSpeed / 60) * ratio) / myCar.tireCircumInMeter)) / myCar.finalDriveRatio, 2);
 
 
-        float engineRPM = (speedInKM * ratio * myCar.finalDriveRatio) / (rpmConvertCoef * myCar.tireCircumInMeter);
-
-        speedoMeter.SetText("G" + myCar.currentGear + "\n" + engineRPM + " RPM\n" + speedInKM + "km/h\n" /* + myCar.currentSpeed*/);
-
-        if (engineRPM > myCar.engineRedLine)
-        {
-            myCar.upShift();
-        }
+        speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
 
 
+        // Car movement Translate and Rotate
         transform.Translate(new Vector3(0, 0, myCar.currentSpeed /40) * Time.deltaTime);
         if (myCar.currentSpeed > 0) {
             transform.Rotate(new Vector3(0, horizontal / 30, 0) * Time.deltaTime * 1000);
@@ -107,60 +84,58 @@ public class move : MonoBehaviour
 
 public class Car
 {
-    //int gearCount;
-    float torque;
-    float maxRPM;
-    int maxWheelTurnAngle;
-    public float currentSpeed { get; set; }
-    public float currentRPM = 0f;
-    public int currentGear = 1;
-
+    public GearBox gearBox = new GearBox6SpeedMcLarenF1();
+    // public GearBox gearBox = new GearBox7SpeedMcLaren720s();
+    public int maxWheelTurnAngle = 40;
+    public float rpmConvertCoef = 3f / 50f;
     public float engineRedLine = 7500f;
-    public float baseStrenght = 300f;
-    public float tireCircumInMeter = 1.787f; // 2.3f;
-    public float finalDriveRatio = 2.37f;
+    public float baseStrenght = 100f;
+    public float currentSpeed { get; set; }
 
-
-    private bool _clutch = false;
-    public bool Clutch
+    public float speedInKM
     {
-        get { return _clutch; }
-        set { _clutch = currentSpeed == 0; }
+        get => (float)Math.Round(currentSpeed / 10, 1);
+    }
+    public float currentRPM
+    {
+        get => (gearBox.getGearRatio() != 0) ? (this.speedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (1500f);
     }
 
+    public Car() {}
 
-    public Car(float torque, float maxRPM, int maxWheelTurnAngle)
+    public Car(float engineRedLine, int maxWheelTurnAngle)
     {
-        this.torque = torque;
-        this.maxRPM = maxRPM;
+        this.engineRedLine = engineRedLine;
         this.maxWheelTurnAngle = maxWheelTurnAngle;
     }
 
-    public Car(float torque, float maxRPM, int maxWheelTurnAngle, float currentSpeed, float currentRPM, int currentGear)
+    public Car(float engineRedLine, int maxWheelTurnAngle, float currentSpeed, int currentGear)
     {
-        this.torque = torque;
-        this.maxRPM = maxRPM;
+        this.engineRedLine = engineRedLine;
         this.maxWheelTurnAngle = maxWheelTurnAngle;
         this.currentSpeed = currentSpeed;
-        this.currentRPM = currentRPM;
-        this.currentGear = currentGear;
-    }
-
-    public void carMovement()
-    {
-        //accelerate();
-
-
-        turnWheels();
+        gearBox.currentGear = currentGear;
     }
 
     public void accelerate(float vertical)
     {
         if (vertical > 0) // accelerate
         {
-            currentSpeed += getAccelerationStrenght() * Time.deltaTime;
+            if (currentRPM < engineRedLine + 700)
+            {
+                currentSpeed += getAccelerationStrenght() * Time.deltaTime;
+            }
+
+            if (currentRPM > engineRedLine)
+            {
+                gearBox.upShift();
+            }
+            else if (currentRPM < engineRedLine - 3000f)
+            {
+                gearBox.downShift();
+            }
         }
-        /*else if (vertical == 0) // idle
+        else if (vertical == 0) // idle
         {
             if (currentSpeed < 1 && currentSpeed > -1)
             {
@@ -174,7 +149,7 @@ public class Car
             {
                 currentSpeed += 10 * Time.deltaTime;
             }
-        }*/
+        }
         else if (vertical < 0) // break/reverse
         {
             if (currentSpeed > 0)
@@ -187,71 +162,20 @@ public class Car
                 currentSpeed += vertical * 10 * Time.deltaTime; // reverse
             }
         }
-        /*if ((vertical == 1 || vertical == 0 || vertical == -1) && (currentSpeed > 1 && currentSpeed < -1))
+        if ((vertical == 1 || vertical == 0 || vertical == -1) && (currentSpeed > 1 && currentSpeed < -1))
         {
             currentSpeed = Convert.ToInt32(Math.Floor(currentSpeed));
-        }*/
+        }
+
+        if (currentRPM < 1500f)
+        {
+            gearBox.downShift();
+        }
     }
     
     public int getAccelerationStrenght()
     {
-        return (int)(baseStrenght / getGearRatio());
-    }
-
-    public float getGearRatio()
-    {
-        switch (currentGear)
-        {
-            case 1:
-                return 3.23f;
-            case 2:
-                return 2.19f;
-            case 3:
-                return 1.71f;
-            case 4:
-                return 1.39f;
-            case 5:
-                return 1.16f;
-            case 6:
-                return 0.93f;
-            default:
-                return 0f;
-        }
-        /*switch (currentGear)
-        {
-            case 1:
-                return 3.98f;
-            case 2:
-                return 2.61f;
-            case 3:
-                return 1.91f;
-            case 4:
-                return 1.48f;
-            case 5:
-                return 1.16f;
-            case 6:
-                return 0.91f;
-            case 7:
-                return 0.69f;
-            default:
-                return 0f;
-        }*/
-    }
-
-    public void upShift()
-    {
-        if (currentGear < 7)
-        {
-            currentGear++;
-        }
-    }
-
-    public void downShift()
-    {
-        if (currentGear > 1)
-        {
-            currentGear--;
-        }
+        return (int)(baseStrenght * gearBox.getGearRatio());
     }
 
     public void turnWheels()
@@ -284,5 +208,120 @@ public class Car
             //Debug.Log(wheel.transform.rotation);
             //transform.Rotate(new Vector3(0, (vertical * horizontal) / 30, 0) * Time.deltaTime * 1000);
         //}
+    }
+}
+
+
+public class GearBox // some default gearbox
+{
+    public int gearCount = 7;
+    public int currentGear = 1;
+    public float finalDriveRatio = 2.37f;
+    public float tireCircumInMeter = 2f;
+
+    public GearBox(int gearCount, int currentGear, float finalDriveRatio, float tireCircumInMeter)
+    {
+        this.gearCount = gearCount;
+        this.currentGear = currentGear;
+        this.finalDriveRatio = finalDriveRatio;
+        this.tireCircumInMeter = tireCircumInMeter;
+    }
+
+    public void upShift()
+    {
+        if (currentGear < gearCount)
+        {
+            currentGear++;
+        }
+    }
+
+    public void downShift()
+    {
+        if (currentGear > 1)
+        {
+            currentGear--;
+        }
+    }
+
+    public virtual float getGearRatio()
+    {
+        switch (currentGear)
+        {
+            case 1:
+                return 3f;
+            case 2:
+                return 2f;
+            case 3:
+                return 1.5f;
+            case 4:
+                return 1.2f;
+            case 5:
+                return 1f;
+            case 6:
+                return 0.85f;
+            case 7:
+                return 0.70f;
+            default:
+                return 0f;
+        }
+    }
+}
+
+public class GearBox6SpeedMcLarenF1 : GearBox 
+{
+    public GearBox6SpeedMcLarenF1() : base(6, 1, 2.37f, 1.787f) {}
+
+    public override float getGearRatio()
+    {
+        switch (currentGear)
+        {
+            case -1:
+                return -2.80f;
+            case 0: // neutral
+                return 0f;
+            case 1:
+                return 3.23f;
+            case 2:
+                return 2.19f;
+            case 3:
+                return 1.71f;
+            case 4:
+                return 1.39f;
+            case 5:
+                return 1.16f;
+            case 6:
+                return 0.93f;
+            default:
+                return 0f;
+        }
+    }
+}
+
+
+public class GearBox7SpeedMcLaren720s : GearBox
+{
+    public GearBox7SpeedMcLaren720s() : base(7, 1, 2.37f, 2.3f) {}
+
+    public override float getGearRatio()
+    {
+        switch (currentGear)
+        {
+            case 1:
+                return 3.98f;
+            case 2:
+                return 2.61f;
+            case 3:
+                return 1.91f;
+            case 4:
+                return 1.48f;
+            case 5:
+                return 1.16f;
+            case 6:
+                return 0.91f;
+            case 7:
+                return 0.69f;
+            default:
+                return 0f;
+        }
     }
 }
