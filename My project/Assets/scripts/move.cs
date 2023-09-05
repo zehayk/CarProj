@@ -188,7 +188,8 @@ public class Car
             currentSpeed = Convert.ToInt32(Math.Floor(currentSpeed));
         }
 
-        if (currentRPM < 1500f)
+        //if (currentRPM < 1500f)
+        if (currentRPM < 4500f)
         {
             gearBox.downShift();
         }
