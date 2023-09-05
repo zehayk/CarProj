@@ -26,6 +26,10 @@ public class move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //myResults = otherGameObject.GetComponentInParent<ComponentType>()
+
+
         myCar = new Car();
         //myCar = new Car(140, 7000, 40, 1550, 0, 2);
         wheels = GameObject.FindGameObjectsWithTag("FrontWheels");
@@ -45,7 +49,7 @@ public class move : MonoBehaviour
         float vertical = Input.GetAxis("Vertical"); // forward backward
         float horizontal = Input.GetAxis("Horizontal");
 
-        Debug.Log(vertical);
+        //Debug.Log(vertical);
 
         myCar.accelerate(vertical);
 
@@ -77,6 +81,23 @@ public class move : MonoBehaviour
 
         //Debug.Log(Time.fixedDeltaTime);
         //Debug.Log(Time.deltaTime);
+
+        //GameObject childObject = transform.Find("v10_italian").gameObject;
+        //RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
+        
+        GameObject childObject = transform.Find("v10_german").gameObject;
+        RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
+
+        if (childScript != null)
+        {
+            childScript.engineCurrentRPM = myCar.currentRPM;
+            Debug.Log(childScript.carMaxSpeed);
+
+        }
+        else
+        {
+            Debug.Log("aaaaaaaaaaa");
+        }
 
     }
 }

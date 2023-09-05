@@ -15,7 +15,7 @@ C:/repos/CarProj/My project
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-49789
+50538
 Successfully changed project path to: C:/repos/CarProj/My project
 C:/repos/CarProj/My project
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/repos/CarProj/My project
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 100.01 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 113.25 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56860
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.014731 seconds.
+Registered in 0.012065 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 97.44 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 96.68 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.842 seconds
+- Completed reload, in  0.760 seconds
 Domain Reload Profiling:
-	ReloadAssembly (842ms)
-		BeginReloadAssembly (136ms)
+	ReloadAssembly (760ms)
+		BeginReloadAssembly (91ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (558ms)
-			LoadAssemblies (134ms)
+		EndReloadAssembly (531ms)
+			LoadAssemblies (88ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (133ms)
+			SetupTypeCache (117ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (313ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (324ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (98ms)
+				RefreshPlugins (97ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (158ms)
-				ProcessInitializeOnLoadMethodAttributes (44ms)
+				ProcessInitializeOnLoadAttributes (160ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007469 seconds.
+Registered in 0.007647 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\repos\CarProj\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\repos\CarProj\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.120 seconds
+- Completed reload, in  1.204 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1121ms)
-		BeginReloadAssembly (113ms)
+	ReloadAssembly (1205ms)
+		BeginReloadAssembly (135ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (887ms)
-			LoadAssemblies (133ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (919ms)
+			LoadAssemblies (99ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (267ms)
+			SetupTypeCache (300ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (402ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (424ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (108ms)
-				ProcessInitializeOnLoadAttributes (244ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				BeforeProcessingInitializeOnLoad (105ms)
+				ProcessInitializeOnLoadAttributes (263ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (13ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.35 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3427 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 26 unused Assets / (85.9 KB). Loaded Objects now: 3904.
-Memory consumption went from 130.1 MB to 130.1 MB.
-Total: 5.218000 ms (FindLiveObjects: 0.417400 ms CreateObjectMapping: 0.460500 ms MarkObjects: 4.132700 ms  DeleteObjects: 0.205500 ms)
+Unloading 26 unused Assets / (86.4 KB). Loaded Objects now: 3908.
+Memory consumption went from 131.2 MB to 131.1 MB.
+Total: 3.382500 ms (FindLiveObjects: 0.349900 ms CreateObjectMapping: 0.276100 ms MarkObjects: 2.659800 ms  DeleteObjects: 0.095300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -160,3 +160,646 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46496.361116 seconds.
+  path: Assets/FlamingSands_Cars/sport_car_1/sport_car_1_body_custom_2.png
+  artifactKey: Guid(ceaa5339f2027674ea2bb28d3e86163b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FlamingSands_Cars/sport_car_1/sport_car_1_body_custom_2.png using Guid(ceaa5339f2027674ea2bb28d3e86163b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0beb5292f368d9a0cee7a6e7ccdc728') in 0.099483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FlamingSands_Cars/sport_car_1/sport_car_1_lights_em.png
+  artifactKey: Guid(42943d8359506b64295c9de851eb6b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FlamingSands_Cars/sport_car_1/sport_car_1_lights_em.png using Guid(42943d8359506b64295c9de851eb6b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '706c246bddc1d5c89a4be693e840eb66') in 0.012805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FlamingSands_Cars/sport_car_1/sport_car_1_interior.png
+  artifactKey: Guid(c6fab77c737b3d741b6e572a2c2396ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FlamingSands_Cars/sport_car_1/sport_car_1_interior.png using Guid(c6fab77c737b3d741b6e572a2c2396ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee872a04085b4554badfe3a04df69dbc') in 0.011757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 69.357091 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_off.wav
+  artifactKey: Guid(1a28469b66ddc3f4394165b2634f368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_off.wav using Guid(1a28469b66ddc3f4394165b2634f368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39852b2b30b687e0bd8be39314a899a6') in 0.095452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_off.wav
+  artifactKey: Guid(aab9893499f2db14d982ea3c214622ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_off.wav using Guid(aab9893499f2db14d982ea3c214622ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd732c4d91a11064a2686cb67d2c3a14b') in 0.027744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_maxRPM.wav
+  artifactKey: Guid(01c67f1834599824a880b36282466c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_maxRPM.wav using Guid(01c67f1834599824a880b36282466c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b89947ab34e44cd630a2e26f9a7b2411') in 0.010599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_startup.wav
+  artifactKey: Guid(56ad14cf6ac79e64ca4804c8c93fece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_startup.wav using Guid(56ad14cf6ac79e64ca4804c8c93fece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbf4ab1b4693c8abf3ed7a6db6ce231b') in 0.009769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_off.wav
+  artifactKey: Guid(3048985a7798b684d860bddb83bbc5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_off.wav using Guid(3048985a7798b684d860bddb83bbc5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ba6d3992313c9554128f1561040038') in 0.009207 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007285 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\repos\CarProj\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\repos\CarProj\My project\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.201 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1202ms)
+		BeginReloadAssembly (158ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (922ms)
+			LoadAssemblies (105ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (319ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (408ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (265ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3424 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (78.8 KB). Loaded Objects now: 3936.
+Memory consumption went from 136.9 MB to 136.8 MB.
+Total: 3.363000 ms (FindLiveObjects: 0.263400 ms CreateObjectMapping: 0.176500 ms MarkObjects: 2.839300 ms  DeleteObjects: 0.082700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 126.526888 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_off.wav
+  artifactKey: Guid(aab9893499f2db14d982ea3c214622ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_off.wav using Guid(aab9893499f2db14d982ea3c214622ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b4b9ad206df9f7410e543d29c1f1b14') in 0.050799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_off.wav
+  artifactKey: Guid(1a28469b66ddc3f4394165b2634f368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_off.wav using Guid(1a28469b66ddc3f4394165b2634f368d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8fa7a03018b8dd8ce889fe1ac20f48') in 0.008589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_on.wav
+  artifactKey: Guid(caf21a066ef472541b74cc6f46cb4d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_on.wav using Guid(caf21a066ef472541b74cc6f46cb4d79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da875a1fcca766f14a39cf9c3ccf51e6') in 0.008222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_maxRPM.wav
+  artifactKey: Guid(01c67f1834599824a880b36282466c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_maxRPM.wav using Guid(01c67f1834599824a880b36282466c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e621f18b138125e7b2f743917476c8') in 0.008044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_on.wav
+  artifactKey: Guid(92b51350a374b0145ba411bf6037d2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_med_on.wav using Guid(92b51350a374b0145ba411bf6037d2af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313b42140679f44da63371489460b7a0') in 0.007349 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_startup.wav
+  artifactKey: Guid(56ad14cf6ac79e64ca4804c8c93fece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_startup.wav using Guid(56ad14cf6ac79e64ca4804c8c93fece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1d4efa9aa7e3ee6ffb2eb71fb67aa74') in 0.007310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_off.wav
+  artifactKey: Guid(3048985a7798b684d860bddb83bbc5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_low_off.wav using Guid(3048985a7798b684d860bddb83bbc5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e51324d54efb6ea94ba9ec517ca050a') in 0.009618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_on.wav
+  artifactKey: Guid(ee68262e7a73a4c4b8e940ecd2330b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Car Engine Sound - i6 German Free/Assets/Audio/i6_german_free/Interior/int_high_on.wav using Guid(ee68262e7a73a4c4b8e940ecd2330b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b31f7c53e62f23e71865b92ecbd52a50') in 0.008445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2492.871320 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/_Empty.prefab
+  artifactKey: Guid(993d60c2e5bca2b4d88b245b972f08b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/_Empty.prefab using Guid(993d60c2e5bca2b4d88b245b972f08b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a40ded9ff1fc9a6b614ae549ee93315') in 0.030576 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_2.prefab
+  artifactKey: Guid(6139ebe1a29365f488379a996fa370e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_2.prefab using Guid(6139ebe1a29365f488379a996fa370e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc6f65c7b3227c16b880cbeaf9f81fa') in 0.007403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/RandomPacks/TiptronicShiftRandom_1.prefab
+  artifactKey: Guid(6d6cd11ec9522b64998209a66474604c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/RandomPacks/TiptronicShiftRandom_1.prefab using Guid(6d6cd11ec9522b64998209a66474604c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49b12deaed3aa5da9e04098d3aa08bc7') in 0.006547 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Truck_old.prefab
+  artifactKey: Guid(8caaaecc50b1b694fa032930719b2f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Truck_old.prefab using Guid(8caaaecc50b1b694fa032930719b2f5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29aa0a2506e348bb1bcb0db186834709') in 0.006243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i4_japanese_interior.prefab
+  artifactKey: Guid(afb4a86ad4330574b9d57dcafa764ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i4_japanese_interior.prefab using Guid(afb4a86ad4330574b9d57dcafa764ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3c6a2980872a05240c01929c2476e3b') in 0.005101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/ShiftingSound_1.prefab
+  artifactKey: Guid(dab3d46b3d51aa94d8db95e015bed395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/ShiftingSound_1.prefab using Guid(dab3d46b3d51aa94d8db95e015bed395) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '631674ddf9629f945dac56435e6aa85f') in 0.003962 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_1.prefab
+  artifactKey: Guid(cc11a00b39887404380aa02efa0b2d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_1.prefab using Guid(cc11a00b39887404380aa02efa0b2d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d8df58a866d3e1b0c92bb9e30ac1057') in 0.004554 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i4_german_interior.prefab
+  artifactKey: Guid(bf4844a72e2fb72409fc953a7062e909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i4_german_interior.prefab using Guid(bf4844a72e2fb72409fc953a7062e909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1712bfefc62620588fa2bc352d20718c') in 0.005300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i6_german_free_int.prefab
+  artifactKey: Guid(f1c62a562f94a564c98a408cfcd5862a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i6_german_free_int.prefab using Guid(f1c62a562f94a564c98a408cfcd5862a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '280d4971777d5cfe228d05e7f48577e5') in 0.008511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i6_german_free.prefab
+  artifactKey: Guid(02de2175848bf744fbd59557b31e4cc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i6_german_free.prefab using Guid(02de2175848bf744fbd59557b31e4cc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '858061fdea82153acf09a74d70ea48c5') in 0.004933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i6_german_free_interior.prefab
+  artifactKey: Guid(7527c8637c44f284b91e421f6b5ae3e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i6_german_free_interior.prefab using Guid(7527c8637c44f284b91e421f6b5ae3e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bc56b54d51268c8c690190e63c04183') in 0.005636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i4_german_interior.prefab
+  artifactKey: Guid(1662e16e256bc2f4f843db67eec1aa31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i4_german_interior.prefab using Guid(1662e16e256bc2f4f843db67eec1aa31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '569fd750f1e1bdff5d578f42dbff39c1') in 0.005625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_3.prefab
+  artifactKey: Guid(1a876591d3d3a7149bd45b0ae79cb69f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_3.prefab using Guid(1a876591d3d3a7149bd45b0ae79cb69f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03182ca28667fa3596b45bcabf3b7060') in 0.004396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_1.prefab
+  artifactKey: Guid(6c0894ac5f4f33546b338f99f6e7e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_1.prefab using Guid(6c0894ac5f4f33546b338f99f6e7e0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f7306fdc77ca44c007e4fdfec324ed5') in 0.004753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i4_japanese_interior.prefab
+  artifactKey: Guid(33be27538f6f3824db2b5cda9ecbbdf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/i4_japanese_interior.prefab using Guid(33be27538f6f3824db2b5cda9ecbbdf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c91c93f745b5ad3364252b9777c1bfc2') in 0.005744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i4_japanese.prefab
+  artifactKey: Guid(8f061d60486de3b499b5163773dc11ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i4_japanese.prefab using Guid(8f061d60486de3b499b5163773dc11ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b0ba1c7e31ac441c1671977f51a6c38') in 0.006174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_1.prefab
+  artifactKey: Guid(fe40956980fc73549a9e3c17ca385674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_1.prefab using Guid(fe40956980fc73549a9e3c17ca385674) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ac9317ddb2614a6dcb28d2e409b6a1e') in 0.004604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Truck_old.prefab
+  artifactKey: Guid(faa13894165eced4e892b2b5e43d45ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Truck_old.prefab using Guid(faa13894165eced4e892b2b5e43d45ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffeb32e6b3565157210c83f7f1183814') in 0.005594 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_1/OneFile/ShiftingSound_3.prefab
+  artifactKey: Guid(a3aaabe450a4fc944bf3b75766507eb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_1/OneFile/ShiftingSound_3.prefab using Guid(a3aaabe450a4fc944bf3b75766507eb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c7e67b392d5c5ccfbd6400804e49b26') in 0.005337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/diesel_2.5_german 1.prefab
+  artifactKey: Guid(b8bf1277f314b6a4b83749a3c68ac50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/diesel_2.5_german 1.prefab using Guid(b8bf1277f314b6a4b83749a3c68ac50b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e8784c57a5637aaf0ab519b3aa5a0f1') in 0.006580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_serbian_interior.prefab
+  artifactKey: Guid(7c1883915c543ab49b1e80841bc9e51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_serbian_interior.prefab using Guid(7c1883915c543ab49b1e80841bc9e51b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1f3656caebab692deadecd751903f8d') in 0.005068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/diesel_2.5_german_interior.prefab
+  artifactKey: Guid(fb2218dc3ff5f1d4faf336faef18380c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/diesel_2.5_german_interior.prefab using Guid(fb2218dc3ff5f1d4faf336faef18380c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac90c6de8c0c4254bf55a3b274f5450') in 0.006557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/TiptronicShift3_mob_2.prefab
+  artifactKey: Guid(2b0db7841b70c7b44b1bc05f75958087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/TiptronicShift3_mob_2.prefab using Guid(2b0db7841b70c7b44b1bc05f75958087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70d69046343a875a7f441c381c12bb2') in 0.004444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_japanese.prefab
+  artifactKey: Guid(9a66353fb68b6bb45811071f1fbeb7f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_japanese.prefab using Guid(9a66353fb68b6bb45811071f1fbeb7f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a02ae4a99fc7bcf2e6ef373f0ec8faf3') in 0.005821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i4_japanese.prefab
+  artifactKey: Guid(1168af0810c82964f87a96b222b1cf14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i4_japanese.prefab using Guid(1168af0810c82964f87a96b222b1cf14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feedeac5c780f24b088c1481d14a6b93') in 0.007090 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/TiptronicShift_1.prefab
+  artifactKey: Guid(01d26b27037bb824286084331966d357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/TiptronicShift_1.prefab using Guid(01d26b27037bb824286084331966d357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cebf203fd4fb72352aae63ee15d1433') in 0.005068 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/diesel_2.5_german.prefab
+  artifactKey: Guid(719ec3381e9b7984c822c7eab3b25198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/diesel_2.5_german.prefab using Guid(719ec3381e9b7984c822c7eab3b25198) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96c8e16524edafcf915bc49bbf6e51a1') in 0.010478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/rotary_x8_free_interior.prefab
+  artifactKey: Guid(e6b7b8a34962985449e8e428091bca65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/rotary_x8_free_interior.prefab using Guid(e6b7b8a34962985449e8e428091bca65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64dcb13c92f63c2e2748243639109087') in 0.009738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_3.prefab
+  artifactKey: Guid(0e36088cbe63c48459f048130b16cd97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_3.prefab using Guid(0e36088cbe63c48459f048130b16cd97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03923e37283137b676876d733c74c317') in 0.005853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i6_german_interior.prefab
+  artifactKey: Guid(6f1278fc38ec5e84281b4255ca130825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/i6_german_interior.prefab using Guid(6f1278fc38ec5e84281b4255ca130825) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78bda4c8e481d6886fd928d4e3b57092') in 0.005657 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i6_german.prefab
+  artifactKey: Guid(5ed08eaf8845dcc4bb8504606a6fe080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/i6_german.prefab using Guid(5ed08eaf8845dcc4bb8504606a6fe080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51c27d877d4366397de5a099f009acef') in 0.005575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_german.prefab
+  artifactKey: Guid(f8aba9f8c2e97a144a8e7dd2053bcdae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_german.prefab using Guid(f8aba9f8c2e97a144a8e7dd2053bcdae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b357c980200e0c974adcbf6be712776') in 0.006981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_2.prefab
+  artifactKey: Guid(53d6a3161c6a92c479ff82fcb4becdf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_2.prefab using Guid(53d6a3161c6a92c479ff82fcb4becdf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3b4cdd2875af9cae2de69d185138dea') in 0.005756 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/rotary_x8_free_interior.prefab
+  artifactKey: Guid(2abf4c82d0a553145bf99b18219a4926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/rotary_x8_free_interior.prefab using Guid(2abf4c82d0a553145bf99b18219a4926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c51980678b299e649134a14e646b6774') in 0.005095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/OneFile/ShiftingSound_3.prefab
+  artifactKey: Guid(007fa23175f43a34fb708e48cf18c69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/OneFile/ShiftingSound_3.prefab using Guid(007fa23175f43a34fb708e48cf18c69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f28d38c0fcf7e789ce1f5ab1a319ba1b') in 0.004256 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Supercharger_Prefabs/Mobile/SuperCharger_mob_1.prefab
+  artifactKey: Guid(04e3bbf4cee0db841afeabb0266a66c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Supercharger_Prefabs/Mobile/SuperCharger_mob_1.prefab using Guid(04e3bbf4cee0db841afeabb0266a66c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd956d9866cae66df20d72bb0a8ff5690') in 0.005484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/i6_german_free.prefab
+  artifactKey: Guid(f5fc05cacc249c84db5c166540cf0573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/i6_german_free.prefab using Guid(f5fc05cacc249c84db5c166540cf0573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e2006da462eb6754fa266c0a9f16182') in 0.008567 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_2.prefab
+  artifactKey: Guid(0fb848f94655e21438d25203745c4b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/ShiftingSound2_mob_2.prefab using Guid(0fb848f94655e21438d25203745c4b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a854dfaadac19bd2d1ad0984d28dc50e') in 0.004428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_german_interior.prefab
+  artifactKey: Guid(82c7fbdbe96e7534e80ad7846a352c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_german_interior.prefab using Guid(82c7fbdbe96e7534e80ad7846a352c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d53d626880202fc64de66a0ad6b90a2') in 0.007632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/rotary_x8_free_interior.prefab
+  artifactKey: Guid(174f0f4c57b6c3845a225a298abc3677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/rotary_x8_free_interior.prefab using Guid(174f0f4c57b6c3845a225a298abc3677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66f66c8f4418ff900371ae077f51c06b') in 0.005890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/Truck_Old_int.prefab
+  artifactKey: Guid(57ad5712d0587e143813cb47fe826abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/Truck_Old_int.prefab using Guid(57ad5712d0587e143813cb47fe826abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c543b5e2cb4a4b80ff76c93c3ab43fd') in 0.006043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Truck_Old.prefab
+  artifactKey: Guid(6357e8568bb69484aa82df238fc9078c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Truck_Old.prefab using Guid(6357e8568bb69484aa82df238fc9078c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eecb4e4d07e2002016bcacc0c5f0da27') in 0.005362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_3.prefab
+  artifactKey: Guid(2a1eac968a572fa4c8f5ab9dba892a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/MufflerPluck_3.prefab using Guid(2a1eac968a572fa4c8f5ab9dba892a89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba2a7d21a8575ca7abafaf4bb3f50472') in 0.004654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_1.prefab
+  artifactKey: Guid(93a86cc5dfc152247ad289682ca277ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/Mobile/ShiftingSound3_mob_1.prefab using Guid(93a86cc5dfc152247ad289682ca277ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608e7412c26826d86be23732a9e5bd74') in 0.005662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i6_german_free_int.prefab
+  artifactKey: Guid(83a03bc5b8604df4aaa62d47ca099803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i6_german_free_int.prefab using Guid(83a03bc5b8604df4aaa62d47ca099803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd06094e657f9b1ed6f0cf3dc8ebb9025') in 0.006065 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/_Empty_mobile.prefab
+  artifactKey: Guid(9272fbf2c2243034a98258a500528b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/_Empty_mobile.prefab using Guid(9272fbf2c2243034a98258a500528b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eafb9abdcec4bd8be0e222e14b65cf0f') in 0.005853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_japanese_interior.prefab
+  artifactKey: Guid(ad18d83eee2432643b0a47c4c1692e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/i4_japanese_interior.prefab using Guid(ad18d83eee2432643b0a47c4c1692e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c94eac6581dc3ae1728c86949c845da3') in 0.005716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i6_german_free.prefab
+  artifactKey: Guid(6c8f1a474b9338a4db23ebaa625cbd58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i6_german_free.prefab using Guid(6c8f1a474b9338a4db23ebaa625cbd58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d78edd8be3c1ac96271a2dbb42083e4') in 0.005866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i6_german.prefab
+  artifactKey: Guid(db0cc82bcb3e2ec4f848145298604fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/i6_german.prefab using Guid(db0cc82bcb3e2ec4f848145298604fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '710d90d33c77c6135a3eea1999621e1c') in 0.006141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/TiptronicShift2_mob_1.prefab
+  artifactKey: Guid(bb44a147839cdf14fb5cf065e8533233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/Mobile/TiptronicShift2_mob_1.prefab using Guid(bb44a147839cdf14fb5cf065e8533233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59db4b5847f7307ec7cd002aef826547') in 0.004505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/TiptronicShift_2.prefab
+  artifactKey: Guid(5fdbeb7201fccea4183159ab54f23373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_3/OneFile/TiptronicShift_2.prefab using Guid(5fdbeb7201fccea4183159ab54f23373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '904406a3629d3c37ce35399eb146817e') in 0.004378 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Interior/TurboCharger_int_1.prefab
+  artifactKey: Guid(3d758a0b58ead024a920be70494fdb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Interior/TurboCharger_int_1.prefab using Guid(3d758a0b58ead024a920be70494fdb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e745dce87e37123fe85ceb72fdf2822b') in 0.007827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/TurboCharger_mob_3.prefab
+  artifactKey: Guid(811e6c41b6d147748b14ef731797a181) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/TurboCharger_mob_3.prefab using Guid(811e6c41b6d147748b14ef731797a181) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ce2019cec4c605eea214657b242572') in 0.005714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_serbian.prefab
+  artifactKey: Guid(110232b103cf70547ba7c48769085fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/i4_serbian.prefab using Guid(110232b103cf70547ba7c48769085fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b772bfc18f45ef1af8c4b8127a3d92e6') in 0.005307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_2.prefab
+  artifactKey: Guid(d060cb5970de07e439c14aee537c6947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_2.prefab using Guid(d060cb5970de07e439c14aee537c6947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0461fbc034b6221c94903fdfe933c0b1') in 0.005138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/rotary_x8_free_interior.prefab
+  artifactKey: Guid(9750482df68acf94fbdec9e4cfe63cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/rotary_x8_free_interior.prefab using Guid(9750482df68acf94fbdec9e4cfe63cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35b4a91219facc2a061752f6245a20b1') in 0.005847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/i4_german.prefab
+  artifactKey: Guid(8ca2ef8e927b0c2419cb88fdadfc0de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/i4_german.prefab using Guid(8ca2ef8e927b0c2419cb88fdadfc0de0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f7ec326686bd0afb836f4b13e0726d') in 0.007095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_3.prefab
+  artifactKey: Guid(f11f012488c86524ea93cb167268e55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/MufflerPluck_Prefabs/Mobile/MufflerPluck_mob_3.prefab using Guid(f11f012488c86524ea93cb167268e55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17bea5789e0b23fecb4c2ca939a140ee') in 0.005509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/diesel_2.5_german_interior.prefab
+  artifactKey: Guid(3e0033d9ae9959e47b35776ed80a0842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/diesel_2.5_german_interior.prefab using Guid(3e0033d9ae9959e47b35776ed80a0842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60f29725d6325170040bb0ee5fe35d82') in 0.005571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/i4_japanese_interior.prefab
+  artifactKey: Guid(c7b0ac602c772964da8696b5c1342e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/i4_japanese_interior.prefab using Guid(c7b0ac602c772964da8696b5c1342e80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24f52908e8bdcfe6b78a5825d394be04') in 0.005377 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_1/Mobile/ShiftingSound_mob_2.prefab
+  artifactKey: Guid(0585afdc4540897458d1dc3ebd29bb3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_1/Mobile/ShiftingSound_mob_2.prefab using Guid(0585afdc4540897458d1dc3ebd29bb3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de701b2cb6665c1bff29b983f04dba94') in 0.004575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/RandomPacks/ShiftingSoundRandom_1.prefab
+  artifactKey: Guid(62cea845ac6f42c49ba2b514be391fb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Shift_Prefabs/Pack_2/RandomPacks/ShiftingSoundRandom_1.prefab using Guid(62cea845ac6f42c49ba2b514be391fb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60d39d642f515e3cba2f2d72919d7106') in 0.005285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.599748 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/Interior/TurboCharger_mob_int_1.prefab
+  artifactKey: Guid(ef4b5df1dad15fb4d87942fcd75b924f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/Interior/TurboCharger_mob_int_1.prefab using Guid(ef4b5df1dad15fb4d87942fcd75b924f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c9ed1bf351ed425fa8b4f9ae457bca5') in 0.005287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/Interior/TurboCharger_mob_int_4.prefab
+  artifactKey: Guid(5dc6223833378704a94147e29b51235d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Turbo_Prefabs/Mobile/Interior/TurboCharger_mob_int_4.prefab using Guid(5dc6223833378704a94147e29b51235d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82bc6d107f87aed397b75040acee2cd5') in 0.004850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/V8_american_modern.prefab
+  artifactKey: Guid(fde4c1e4949d3ac4ebe67c9a2ba37d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/V8_american_modern.prefab using Guid(fde4c1e4949d3ac4ebe67c9a2ba37d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d28b54e1e518d0008f9ea9a63621d35') in 0.007078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/V8_american_modern.prefab
+  artifactKey: Guid(3992e19dc9e2695409d63702a8984164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/V8_american_modern.prefab using Guid(3992e19dc9e2695409d63702a8984164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06ccb8e85e9dc4df273663aa6e1c3ad') in 0.005503 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/V8_american_modern_interior.prefab
+  artifactKey: Guid(a64d75f5f35dc1a46b86cb90eef2e9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/V8_american_modern_interior.prefab using Guid(a64d75f5f35dc1a46b86cb90eef2e9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa6f149c2951a14cc2148f575b223ca') in 0.005169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/V8_american_classic.prefab
+  artifactKey: Guid(d1329d7f9907e824685289b38b60c55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/V8_american_classic.prefab using Guid(d1329d7f9907e824685289b38b60c55d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '425ac471a4e126562c435454f70542a4') in 0.011848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/V8_american_classic.prefab
+  artifactKey: Guid(9a161018d3d745747ace516f3ca49a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/V8_american_classic.prefab using Guid(9a161018d3d745747ace516f3ca49a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35f912ca2d332aef2d35f03715efc087') in 0.008730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/V8_american_modern_interior.prefab
+  artifactKey: Guid(3a695f68959f84c48917d57ba7d15587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/V8_american_modern_interior.prefab using Guid(3a695f68959f84c48917d57ba7d15587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7cc4818d905e0be20ee5d6b8f21d6a2') in 0.006959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.043136 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/v8_italian.prefab
+  artifactKey: Guid(ba5f48145014fbe4aa742759cb5fc5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/v8_italian.prefab using Guid(ba5f48145014fbe4aa742759cb5fc5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bca9a0f6efa7b038bf56b12eb1e1570') in 0.005554 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/v8_italian_interior.prefab
+  artifactKey: Guid(48f6d644e1e85a0479ecc442e9180e0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Interior/v8_italian_interior.prefab using Guid(48f6d644e1e85a0479ecc442e9180e0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd2a3c25930a4f677c4d2dcd5a57a88a') in 0.005891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/v8_italian.prefab
+  artifactKey: Guid(96572acc8224ea048bd60c7c27ac41e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/v8_italian.prefab using Guid(96572acc8224ea048bd60c7c27ac41e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e800d1dbc84395062967135282d4cf') in 0.005578 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/v8_italian.prefab
+  artifactKey: Guid(59ba5affbff84604b81424c3bbae4794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/v8_italian.prefab using Guid(59ba5affbff84604b81424c3bbae4794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a9bfa84faec211988e1a13d86f54ea') in 0.005673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/v8_italian_interior.prefab
+  artifactKey: Guid(7550b44fcf0caab41a8ae8efba779024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/v8_italian_interior.prefab using Guid(7550b44fcf0caab41a8ae8efba779024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbd177f44861d5711e83724febfbef44') in 0.005986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/v8_italian_interior.prefab
+  artifactKey: Guid(1cbee069a385c144fa0cf18070129073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/v8_italian_interior.prefab using Guid(1cbee069a385c144fa0cf18070129073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d362de40a33ba2f589fc8ae91d9894') in 0.008486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/v8_italian_f355.prefab
+  artifactKey: Guid(b22730ddbca5f1446b71430d1f2b5863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/v8_italian_f355.prefab using Guid(b22730ddbca5f1446b71430d1f2b5863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac3c6259c33bbdc8f56e295b1444b130') in 0.006875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.523774 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/v10_german_interior.prefab
+  artifactKey: Guid(6cc6a98e316a53e48b397399c1599b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Interior/v10_german_interior.prefab using Guid(6cc6a98e316a53e48b397399c1599b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9389e4b6bcd127ffde6571b8179f005a') in 0.007070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/v10_german_interior.prefab
+  artifactKey: Guid(234e7561930315b418279f32f2e8b423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/v10_german_interior.prefab using Guid(234e7561930315b418279f32f2e8b423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea21cf11493e784e6cf32f8c27e0557') in 0.005220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/v10_italian_interior.prefab
+  artifactKey: Guid(372651fc21f13a044ad74345f656b5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/RCC_V3_prefabs/Mobile/Interior/v10_italian_interior.prefab using Guid(372651fc21f13a044ad74345f656b5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69c898ede1c1c0ad040494f99b3efd8c') in 0.006970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/v10_italian_interior.prefab
+  artifactKey: Guid(19c34be3ed9996746a400554f51deac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RealisticEngineSound/Assets/Prefabs/Engine_Prefabs/Mobile/Mobile_Interior/v10_italian_interior.prefab using Guid(19c34be3ed9996746a400554f51deac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e445fad1efed9f7489579aa04ae70be') in 0.005302 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
