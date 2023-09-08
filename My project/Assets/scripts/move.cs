@@ -7,6 +7,7 @@ using TMPro;
 
 
 //2815692_Mclaren+Senna
+[Serializable]
 public class move : MonoBehaviour
 {
     public TextMeshProUGUI speedoMeter;
@@ -20,8 +21,7 @@ public class move : MonoBehaviour
     float strenght = 50.0f;
     Rigidbody rigidBody;
 
-    public Car myCar;
-
+    Car myCar = new Car();
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,8 @@ public class move : MonoBehaviour
 
         //myResults = otherGameObject.GetComponentInParent<ComponentType>()
 
-
         myCar = new Car();
+
         //myCar = new Car(140, 7000, 40, 1550, 0, 2);
         wheels = GameObject.FindGameObjectsWithTag("FrontWheels");
         //foreach (var wheel in wheels) { 
@@ -50,6 +50,8 @@ public class move : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         //Debug.Log(vertical);
+        //if (myCar == null)
+            //return;
 
         myCar.accelerate(vertical);
 
@@ -84,9 +86,9 @@ public class move : MonoBehaviour
 
         //GameObject childObject = transform.Find("v10_italian").gameObject;
         //RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
-        
+
         GameObject childObject = transform.Find("v10_german").gameObject;
-        RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
+        RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
 
         if (childScript != null)
         {
@@ -99,12 +101,32 @@ public class move : MonoBehaviour
             Debug.Log("aaaaaaaaaaa");
         }
 
+
+
+        // spin wheels
+        GameObject wheelRR = transform./*Find("wheels").*/Find("rearRight").gameObject;
+        wheelRR.transform.Rotate(new Vector3(0, 0, 5) * Time.deltaTime * 10);
+
+
+        myCar.isManual = true;
+
+        if (Input.GetKeyDown("q"))
+        {
+            myCar.manualShiftDown();
+        }
+        else if (Input.GetKeyDown("e"))
+        {
+            myCar.manualShiftUp();
+        }
     }
 }
 
 
+[Serializable]
 public class Car
 {
+    public bool isManual { get; set; }
+    //public GearBox gearBox = new GearBox5SpeedBMWe30();
     public GearBox gearBox = new GearBox6SpeedMcLarenF1();
     // public GearBox gearBox = new GearBox7SpeedMcLaren720s();
     public int maxWheelTurnAngle = 40;
@@ -142,18 +164,21 @@ public class Car
     {
         if (vertical > 0) // accelerate
         {
-            if (currentRPM < engineRedLine + 700)
+            if (currentRPM < engineRedLine + 1000)
             {
                 currentSpeed += getAccelerationStrenght() * Time.deltaTime;
             }
 
-            if (currentRPM > engineRedLine)
+            if (!isManual)
             {
-                gearBox.upShift();
-            }
-            else if (currentRPM < engineRedLine - 3000f)
-            {
-                gearBox.downShift();
+                if (currentRPM > engineRedLine)
+                {
+                    gearBox.upShift();
+                }
+                else if (currentRPM < engineRedLine - 3000f)
+                {
+                    gearBox.downShift();
+                }
             }
         }
         else if (vertical == 0) // idle
@@ -188,13 +213,37 @@ public class Car
             currentSpeed = Convert.ToInt32(Math.Floor(currentSpeed));
         }
 
-        //if (currentRPM < 1500f)
-        if (currentRPM < 4500f)
+        if (!isManual) {
+            //if (currentRPM < 1500f)
+            if (currentRPM < 4500f)
+            {
+                gearBox.downShift();
+            }
+        }
+
+        if (currentRPM > engineRedLine)
+        {
+            currentSpeed -= 1000 * Time.deltaTime;
+        }
+
+    }
+
+    public void manualShiftUp()
+    {
+        if (isManual)
+        {
+            gearBox.upShift();
+        }
+    }
+
+    public void manualShiftDown()
+    {
+        if (isManual)
         {
             gearBox.downShift();
         }
     }
-    
+
     public int getAccelerationStrenght()
     {
         return (int)(baseStrenght * gearBox.getGearRatio());
@@ -269,6 +318,10 @@ public class GearBox // some default gearbox
     {
         switch (currentGear)
         {
+            case -1:
+                return -2.80f;
+            case 0: // neutral
+                return 0f;
             case 1:
                 return 3f;
             case 2:
@@ -319,7 +372,6 @@ public class GearBox6SpeedMcLarenF1 : GearBox
     }
 }
 
-
 public class GearBox7SpeedMcLaren720s : GearBox
 {
     public GearBox7SpeedMcLaren720s() : base(7, 1, 2.37f, 2.3f) {}
@@ -328,6 +380,10 @@ public class GearBox7SpeedMcLaren720s : GearBox
     {
         switch (currentGear)
         {
+            case -1:
+                return -2.80f;
+            case 0: // neutral
+                return 0f;
             case 1:
                 return 3.98f;
             case 2:
@@ -342,6 +398,35 @@ public class GearBox7SpeedMcLaren720s : GearBox
                 return 0.91f;
             case 7:
                 return 0.69f;
+            default:
+                return 0f;
+        }
+    }
+}
+
+// 1st: 3.72 2nd 2.40 3rd 1.77 4th 1.26 5th 1.00 Reverse 4.23:1
+public class GearBox5SpeedBMWe30 : GearBox
+{
+    public GearBox5SpeedBMWe30() : base(5, 1, 4.23f, 2f) { }
+
+    public override float getGearRatio()
+    {
+        switch (currentGear)
+        {
+            case -1:
+                return -4.23f;
+            case 0: // neutral
+                return 0f;
+            case 1:
+                return 3.72f;
+            case 2:
+                return 2.40f;
+            case 3:
+                return 1.77f;
+            case 4:
+                return 1.26f;
+            case 5:
+                return 1.0f;
             default:
                 return 0f;
         }

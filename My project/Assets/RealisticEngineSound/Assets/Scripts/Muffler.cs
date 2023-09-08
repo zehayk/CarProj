@@ -66,6 +66,7 @@ public class Muffler : MonoBehaviour
         }
         playTime_ = playTime;
         UpdateWaitTime();
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAA");
     }
     void Update()
     {
