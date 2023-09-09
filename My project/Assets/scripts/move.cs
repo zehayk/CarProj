@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //using UnityEngine.InputSystem;
 using TMPro;
 
@@ -11,6 +12,7 @@ using TMPro;
 public class move : MonoBehaviour
 {
     public TextMeshProUGUI speedoMeter;
+    public RawImage rpmNeedle;
     GameObject[] wheels;
     Quaternion startRotation;
     float angle = 0f;
@@ -20,6 +22,8 @@ public class move : MonoBehaviour
 
     float strenght = 50.0f;
     Rigidbody rigidBody;
+
+    float needleAngle = 0;
 
     Car myCar = new Car();
 
@@ -39,8 +43,8 @@ public class move : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
 
 
-        GameObject tmpGO = GameObject.Find("SpeedoMeter");
-        speedoMeter = tmpGO.GetComponent<TextMeshProUGUI>();
+        speedoMeter = GameObject.Find("SpeedoMeter").GetComponent<TextMeshProUGUI>();
+        rpmNeedle = GameObject.Find("RPMNeedle").GetComponent<RawImage>();
     }
 
     // Update is called once per frame
@@ -68,7 +72,24 @@ public class move : MonoBehaviour
         // double a = Math.Round(((((myCar.currentSpeed / 60) * ratio) / myCar.tireCircumInMeter)) / myCar.finalDriveRatio, 2);
 
 
-        speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
+        // speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
+        speedoMeter.SetText("   G" + myCar.gearBox.currentGear + "\n\n" + myCar.speedInKM + "kmh");
+        // rpmNeedle.transform.eulerAngles = new Vector3(0, 0, 220);  // rpmNeedle.transform.eulerAngles.z + 1
+        
+        int maxRPM = 8000;
+        int maxDeg = 260;
+
+        needleAngle = 220 - 260 * (myCar.currentRPM / maxRPM);
+
+        rpmNeedle.transform.eulerAngles = new Vector3(0, 0, needleAngle);  // rpmNeedle.transform.eulerAngles.z + 1
+
+        // spin wheels
+        /*GameObject wheelRR = transform.Find("wheels").Find("rearRight").gameObject;
+        wheelRR.transform.eulerAngles = new Vector3(transform.eulerAngles.x + needleAngle, transform.eulerAngles.y, transform.eulerAngles.z);
+
+        Debug.Log(wheelRR.transform.eulerAngles.x);*/
+
+        //wheelRR.transform.Rotate(new Vector3(0, 0, 5) * Time.deltaTime * 10);
 
 
         // Car movement Translate and Rotate
@@ -87,14 +108,16 @@ public class move : MonoBehaviour
         //GameObject childObject = transform.Find("v10_italian").gameObject;
         //RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
 
-        GameObject childObject = transform.Find("v10_german").gameObject;
-        RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
 
+        // Engine Noise
+        GameObject childObject = transform.Find("v8_italian").gameObject;
+        RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
+
+
+        childScript.engineCurrentRPM = myCar.currentRPM;
         if (childScript != null)
         {
-            childScript.engineCurrentRPM = myCar.currentRPM;
-            Debug.Log(childScript.carMaxSpeed);
-
+            //Debug.Log(childScript.carMaxSpeed);
         }
         else
         {
@@ -102,14 +125,8 @@ public class move : MonoBehaviour
         }
 
 
-
-        // spin wheels
-        GameObject wheelRR = transform./*Find("wheels").*/Find("rearRight").gameObject;
-        wheelRR.transform.Rotate(new Vector3(0, 0, 5) * Time.deltaTime * 10);
-
-
+        // Gear Shifting
         myCar.isManual = true;
-
         if (Input.GetKeyDown("q"))
         {
             myCar.manualShiftDown();
@@ -127,11 +144,12 @@ public class Car
 {
     public bool isManual { get; set; }
     //public GearBox gearBox = new GearBox5SpeedBMWe30();
-    public GearBox gearBox = new GearBox6SpeedMcLarenF1();
+    //public GearBox gearBox = new GearBox6SpeedMcLarenF1();
     // public GearBox gearBox = new GearBox7SpeedMcLaren720s();
+    public GearBox gearBox = new GearBox7Speed_FerrariF8();
     public int maxWheelTurnAngle = 40;
     public float rpmConvertCoef = 3f / 50f;
-    public float engineRedLine = 7500f;
+    public float engineRedLine = 8000f;
     public float baseStrenght = 100f;
     public float currentSpeed { get; set; }
 
@@ -427,6 +445,38 @@ public class GearBox5SpeedBMWe30 : GearBox
                 return 1.26f;
             case 5:
                 return 1.0f;
+            default:
+                return 0f;
+        }
+    }
+}
+
+public class GearBox7Speed_FerrariF8 : GearBox
+{
+    public GearBox7Speed_FerrariF8() : base(7, 1, 4.375f, 2.1f) { }
+
+    public override float getGearRatio()
+    {
+        switch (currentGear)
+        {
+            case -1:
+                return -2.979f;
+            case 0: // neutral
+                return 0f;
+            case 1:
+                return 3.334f;
+            case 2:
+                return 2.285f;
+            case 3:
+                return 1.728f;
+            case 4:
+                return 1.369f;
+            case 5:
+                return 1.115f;
+            case 6:
+                return 0.875f;
+            case 7:
+                return 0.642f;
             default:
                 return 0f;
         }
