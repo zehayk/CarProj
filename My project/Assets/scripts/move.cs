@@ -23,17 +23,18 @@ public class move : MonoBehaviour
     float strenght = 50.0f;
     Rigidbody rigidBody;
 
+    float totalRot = 0f;
+
     float needleAngle = 0;
 
-    Car myCar = new Car();
+    //RealisticEngineSound_mobile engineScript = transform.Find("v8_italian").gameObject.GetComponent<RealisticEngineSound_mobile>();
+    //Car myCar = new Car(engineScript);
+    Car myCar;
 
     // Start is called before the first frame update
     void Start()
     {
-
         //myResults = otherGameObject.GetComponentInParent<ComponentType>()
-
-        myCar = new Car();
 
         //myCar = new Car(140, 7000, 40, 1550, 0, 2);
         wheels = GameObject.FindGameObjectsWithTag("FrontWheels");
@@ -45,6 +46,10 @@ public class move : MonoBehaviour
 
         speedoMeter = GameObject.Find("SpeedoMeter").GetComponent<TextMeshProUGUI>();
         rpmNeedle = GameObject.Find("RPMNeedle").GetComponent<RawImage>();
+
+
+        RealisticEngineSound_mobile engineScript = transform.Find("v8_italian").gameObject.GetComponent<RealisticEngineSound_mobile>();
+        myCar = new Car(engineScript);
     }
 
     // Update is called once per frame
@@ -52,38 +57,20 @@ public class move : MonoBehaviour
     {
         float vertical = Input.GetAxis("Vertical"); // forward backward
         float horizontal = Input.GetAxis("Horizontal");
-
-        //Debug.Log(vertical);
-        //if (myCar == null)
-            //return;
-
+        // Loop car acceleration
         myCar.accelerate(vertical);
 
-
-        //Debug.Log(horizontal);
-        //Debug.Log(vertical);
-
-        //Debug.Log(myCar.currentSpeed);
-
-
-        //float a = Math.Floor(myCar.currentRPM / 10);
-        //float speedInKM = (float)Math.Round(myCar.currentSpeed / 10, 1);
-        //float ratio = 2.19f;
-        // double a = Math.Round(((((myCar.currentSpeed / 60) * ratio) / myCar.tireCircumInMeter)) / myCar.finalDriveRatio, 2);
-
-
+        // RPM GAUGE AND SPEEDOMETER
         // speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
         speedoMeter.SetText("   G" + myCar.gearBox.currentGear + "\n\n" + myCar.speedInKM + "kmh");
-        // rpmNeedle.transform.eulerAngles = new Vector3(0, 0, 220);  // rpmNeedle.transform.eulerAngles.z + 1
         
         int maxRPM = 8000;
         int maxDeg = 260;
 
         needleAngle = 220 - 260 * (myCar.currentRPM / maxRPM);
-
         rpmNeedle.transform.eulerAngles = new Vector3(0, 0, needleAngle);  // rpmNeedle.transform.eulerAngles.z + 1
 
-        // spin wheels
+        // spin wheels /wheel_rb_dummy
         /*GameObject wheelRR = transform.Find("wheels").Find("rearRight").gameObject;
         wheelRR.transform.eulerAngles = new Vector3(transform.eulerAngles.x + needleAngle, transform.eulerAngles.y, transform.eulerAngles.z);
 
@@ -91,9 +78,30 @@ public class move : MonoBehaviour
 
         //wheelRR.transform.Rotate(new Vector3(0, 0, 5) * Time.deltaTime * 10);
 
+        Transform ferrariF8 = transform.Find("Ferrari F8");
+        GameObject[] frontWheels = { ferrariF8.Find("wheel_rf_dummy").gameObject, ferrariF8.Find("wheel_lf_dummy").gameObject };
+        GameObject[] backWheels = { ferrariF8.Find("wheel_rb_dummy").gameObject, ferrariF8.Find("wheel_lb_dummy").gameObject };
 
-        // Car movement Translate and Rotate
+        //wheelRR.transform.Rotate(new Vector3(wheelSpeed, 0, 0) * Time.deltaTime * 1000);
+        //wheelRR.transform.eulerAngles = new Vector3(transform.eulerAngles.x + needleAngle, transform.eulerAngles.y, transform.eulerAngles.z);
+
+
+        totalRot -= myCar.wheelRPM * Time.deltaTime * 10;
+        // Front Wheels
+        foreach (var wheel in frontWheels)
+        {
+            wheel.transform.eulerAngles = new Vector3(transform.eulerAngles.x - totalRot, transform.eulerAngles.y + (horizontal * myCar.maxWheelTurnAngle), transform.eulerAngles.z);
+        }
+
+        // Back Wheels
+        foreach (var wheel in backWheels)
+        {
+            wheel.transform.Rotate(new Vector3(-myCar.wheelRPM, 0, 0) * Time.deltaTime * 10);
+        }
+
+        // Car movement Translate
         transform.Translate(new Vector3(0, 0, myCar.currentSpeed /40) * Time.deltaTime);
+        // Car Rotate
         if (myCar.currentSpeed > 0) {
             transform.Rotate(new Vector3(0, horizontal / 30, 0) * Time.deltaTime * 1000);
         }
@@ -110,11 +118,11 @@ public class move : MonoBehaviour
 
 
         // Engine Noise
-        GameObject childObject = transform.Find("v8_italian").gameObject;
-        RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
+        //GameObject childObject = transform.Find("v8_italian").gameObject;
+        //RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
 
 
-        childScript.engineCurrentRPM = myCar.currentRPM;
+        /*childScript.engineCurrentRPM = myCar.currentRPM;
         if (childScript != null)
         {
             //Debug.Log(childScript.carMaxSpeed);
@@ -122,17 +130,19 @@ public class move : MonoBehaviour
         else
         {
             Debug.Log("aaaaaaaaaaa");
-        }
+        }*/
 
-
+        myCar.engineScript.isShifting = false;
         // Gear Shifting
         myCar.isManual = true;
         if (Input.GetKeyDown("q"))
         {
+            myCar.engineScript.isShifting = true;
             myCar.manualShiftDown();
         }
         else if (Input.GetKeyDown("e"))
         {
+            myCar.engineScript.isShifting = true;
             myCar.manualShiftUp();
         }
     }
@@ -152,6 +162,7 @@ public class Car
     public float engineRedLine = 8000f;
     public float baseStrenght = 100f;
     public float currentSpeed { get; set; }
+    public RealisticEngineSound_mobile engineScript;
 
     public float speedInKM
     {
@@ -161,8 +172,16 @@ public class Car
     {
         get => (gearBox.getGearRatio() != 0) ? (this.speedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (1500f);
     }
+    public float wheelRPM
+    {
+        get => (currentRPM / gearBox.getGearRatio()) / gearBox.finalDriveRatio;
+    }
 
-    public Car() {}
+    public Car(RealisticEngineSound_mobile engineScript)
+    {
+        this.engineScript = engineScript;
+        this.engineScript.maxRPMLimit = this.engineRedLine;
+    }
 
     public Car(float engineRedLine, int maxWheelTurnAngle)
     {
@@ -180,11 +199,14 @@ public class Car
 
     public void accelerate(float vertical)
     {
+        engineScript.engineCurrentRPM = this.currentRPM;
+
         if (vertical > 0) // accelerate
         {
             if (currentRPM < engineRedLine + 1000)
             {
                 currentSpeed += getAccelerationStrenght() * Time.deltaTime;
+                engineScript.gasPedalPressing = true;
             }
 
             if (!isManual)
@@ -201,6 +223,8 @@ public class Car
         }
         else if (vertical == 0) // idle
         {
+            engineScript.gasPedalPressing = false;
+
             if (currentSpeed < 1 && currentSpeed > -1)
             {
                 currentSpeed = 0;
@@ -216,14 +240,16 @@ public class Car
         }
         else if (vertical < 0) // break/reverse
         {
-            if (currentSpeed > 0)
+            if (currentSpeed > 0) // breaking
             {
+                engineScript.gasPedalPressing = false;
                 // currentSpeed -= (1 - 2 * vertical); // break
                 currentSpeed += vertical * 300 * Time.deltaTime; // break (the vertical is negative here)
             }
-            else if (currentSpeed <= 0)
+            else if (currentSpeed <= 0) // reversing
             {
                 currentSpeed += vertical * 10 * Time.deltaTime; // reverse
+                engineScript.gasPedalPressing = true;
             }
         }
         if ((vertical == 1 || vertical == 0 || vertical == -1) && (currentSpeed > 1 && currentSpeed < -1))
