@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 using TMPro;
 
 
@@ -56,8 +56,17 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float vertical = Input.GetAxis("Vertical"); // forward backward
-        float horizontal = Input.GetAxis("Horizontal");
+        var gamepad = Gamepad.current;
+        //float vertical = Input.GetAxis("Vertical"); // forward backward
+        //float horizontal = Input.GetAxis("Horizontal");
+
+        float horizontal = gamepad.leftStick.x.ReadValue();
+
+        bool rTrigger = gamepad.rightTrigger.isPressed;
+        bool lTrigger = gamepad.leftTrigger.isPressed;
+
+        float vertical = (rTrigger) ? 1f : (lTrigger) ? -1 : 0;
+
         // Loop car acceleration
         myCar.accelerate(vertical);
 
@@ -99,10 +108,6 @@ public class move : MonoBehaviour
         // Front Wheels
         foreach (var wheel in frontWheels)
         {
-            /*Debug.Log("AAAAAAAAAAAAAAAAAAA");
-            Debug.Log(transform.eulerAngles.x);
-            Debug.Log(totalRot);
-            Debug.Log(myCar.wheelRPM);*/
             wheel.transform.eulerAngles = new Vector3(transform.eulerAngles.x - totalRot, transform.eulerAngles.y + (horizontal * myCar.maxWheelTurnAngle), transform.eulerAngles.z);
         }
 
@@ -146,19 +151,17 @@ public class move : MonoBehaviour
         }*/
 
 
-        Debug.Log(myCar.currentRPM);
-
 
 
         myCar.engineScript.isShifting = false;
         // Gear Shifting
-        myCar.isManual = false;
-        if (Input.GetKeyDown("q"))
+        myCar.isManual = true;
+        if ((Input.GetKeyDown("q") || gamepad.leftShoulder.wasPressedThisFrame) && myCar.gearBox.currentGear > 1)
         {
             myCar.engineScript.isShifting = true;
             myCar.manualShiftDown();
         }
-        else if (Input.GetKeyDown("e"))
+        else if ((Input.GetKeyDown("e") || gamepad.rightShoulder.wasPressedThisFrame) && myCar.gearBox.currentGear < myCar.gearBox.gearCount)
         {
             myCar.engineScript.isShifting = true;
             myCar.manualShiftUp();

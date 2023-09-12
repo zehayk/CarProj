@@ -1573,6 +1573,39 @@ Transform:
   m_Father: {fileID: 1594860530}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &409810289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5973664577432654472, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &409810293
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409810289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8902220346312397694, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+--- !u!64 &409810294
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409810289}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8902220346312397694, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &411243079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,12 +2678,12 @@ GameObject:
   - component: {fileID: 605455800}
   - component: {fileID: 605455799}
   m_Layer: 0
-  m_Name: MainCamera (1)
+  m_Name: MainCamera side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &605455798
 Transform:
   m_ObjectHideFlags: 0
@@ -3228,6 +3261,25 @@ Transform:
   m_Father: {fileID: 2088725222}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &739304580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5518034035211624249, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &739304584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739304580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 625236974738340760, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &772716490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,6 +3683,25 @@ Transform:
   m_Father: {fileID: 898382718}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &836670429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8540796091370512181, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &836670433
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836670429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5139894355673843599, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &878524435
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,6 +6218,25 @@ Transform:
   m_Father: {fileID: 2088725222}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1345607365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8271221453617384480, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1345607369
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345607365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2920489702863148985, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &1345889983
 GameObject:
   m_ObjectHideFlags: 0
@@ -8809,12 +8899,12 @@ GameObject:
   - component: {fileID: 1809583681}
   - component: {fileID: 1809583682}
   m_Layer: 0
-  m_Name: MainCamera
+  m_Name: MainCameraF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &1809583681
 Camera:
   m_ObjectHideFlags: 0
@@ -9350,6 +9440,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862017033}
   m_Mesh: {fileID: 8170624768388886135, guid: f87faa54698156346b72c0139d0244be, type: 3}
+--- !u!1 &1871574644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2434394019655074839, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1871574648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871574644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6819566809403184154, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &1881193819
 GameObject:
   m_ObjectHideFlags: 0
@@ -12020,6 +12129,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8405108940387699520, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+--- !u!64 &2067893524
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067893516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8405108940387699520, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &2072764559
 GameObject:
   m_ObjectHideFlags: 0
@@ -12160,6 +12283,7 @@ GameObject:
   - component: {fileID: 2088725221}
   - component: {fileID: 2088725224}
   - component: {fileID: 2088725223}
+  - component: {fileID: 2088725225}
   m_Layer: 0
   m_Name: ferrari_cab
   m_TagString: Untagged
@@ -12249,6 +12373,87 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2088725225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088725220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 972fc49386fbb4b4c9b2f605483635ae, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1fc50e4d-780b-4d60-9424-681a26f795ff
+    m_ActionName: Player/Throttle[/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5b7f90ee-abf9-49c5-bc70-69223d580dd3
+    m_ActionName: Player/Steering[/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 843bb139-7460-419d-b91b-ca6d4ed1725b
+    m_ActionName: Player/Break[/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7db5b462-6280-423e-a4a2-643ee621e7b2
+    m_ActionName: Player/ShiftUp[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9be66bb8-7066-432f-8cc4-135f0eaf62a6
+    m_ActionName: Player/ShiftDown[/XInputControllerWindows/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Xbox Control Scheme
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 605455800}
+--- !u!1 &2100731479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7026830631404394743, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
+  m_PrefabInstance: {fileID: 1549297404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2100731483
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100731479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1708262289102440795, guid: 0ecfd2c6ad5d6f4469cef5429e44d1f1, type: 3}
 --- !u!1 &2112897888
 GameObject:
   m_ObjectHideFlags: 0
