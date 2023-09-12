@@ -18,6 +18,7 @@ public class move : MonoBehaviour
     float angle = 0f;
     float rotateBack = 0f;
     //float rotSpeed = 50;
+    float wheelDirection = 1;
 
 
     float strenght = 50.0f;
@@ -62,7 +63,7 @@ public class move : MonoBehaviour
 
         // RPM GAUGE AND SPEEDOMETER
         // speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
-        speedoMeter.SetText("   G" + myCar.gearBox.currentGear + "\n\n" + myCar.speedInKM + "kmh");
+        speedoMeter.SetText("   G" + myCar.gearBox.currentGear + "\n\n" + myCar.displaySpeedInKM + "kmh");
         
         int maxRPM = 8000;
         int maxDeg = 260;
@@ -85,11 +86,23 @@ public class move : MonoBehaviour
         //wheelRR.transform.Rotate(new Vector3(wheelSpeed, 0, 0) * Time.deltaTime * 1000);
         //wheelRR.transform.eulerAngles = new Vector3(transform.eulerAngles.x + needleAngle, transform.eulerAngles.y, transform.eulerAngles.z);
 
+        if (myCar.currentSpeed < -1)
+        {
+            wheelDirection = -1;
+        }
+        else if (myCar.currentSpeed > 1)
+        {
+            wheelDirection = 1;
+        }
 
-        totalRot -= myCar.wheelRPM * Time.deltaTime * 10;
+        totalRot -= myCar.wheelRPM * Time.deltaTime * 5 * wheelDirection;
         // Front Wheels
         foreach (var wheel in frontWheels)
         {
+            /*Debug.Log("AAAAAAAAAAAAAAAAAAA");
+            Debug.Log(transform.eulerAngles.x);
+            Debug.Log(totalRot);
+            Debug.Log(myCar.wheelRPM);*/
             wheel.transform.eulerAngles = new Vector3(transform.eulerAngles.x - totalRot, transform.eulerAngles.y + (horizontal * myCar.maxWheelTurnAngle), transform.eulerAngles.z);
         }
 
@@ -100,7 +113,7 @@ public class move : MonoBehaviour
         }
 
         // Car movement Translate
-        transform.Translate(new Vector3(0, 0, myCar.currentSpeed /40) * Time.deltaTime);
+        transform.Translate(new Vector3(0, 0, myCar.currentSpeed /20) * Time.deltaTime); // myCar.currentSpeed /40
         // Car Rotate
         if (myCar.currentSpeed > 0) {
             transform.Rotate(new Vector3(0, horizontal / 30, 0) * Time.deltaTime * 1000);
@@ -132,9 +145,14 @@ public class move : MonoBehaviour
             Debug.Log("aaaaaaaaaaa");
         }*/
 
+
+        Debug.Log(myCar.currentRPM);
+
+
+
         myCar.engineScript.isShifting = false;
         // Gear Shifting
-        myCar.isManual = true;
+        myCar.isManual = false;
         if (Input.GetKeyDown("q"))
         {
             myCar.engineScript.isShifting = true;
@@ -164,17 +182,17 @@ public class Car
     public float currentSpeed { get; set; }
     public RealisticEngineSound_mobile engineScript;
 
-    public float speedInKM
+    public float displaySpeedInKM
     {
-        get => (float)Math.Round(currentSpeed / 10, 1);
+        get => Math.Abs((float)Math.Round(currentSpeed / 10, 1));
     }
     public float currentRPM
     {
-        get => (gearBox.getGearRatio() != 0) ? (this.speedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (1500f);
+        get => (gearBox.getGearRatio() != 0) ? (this.displaySpeedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (1500f);
     }
     public float wheelRPM
     {
-        get => (currentRPM / gearBox.getGearRatio()) / gearBox.finalDriveRatio;
+        get => (gearBox.getGearRatio() != 0) ? (currentRPM / gearBox.getGearRatio()) / gearBox.finalDriveRatio : 0f;
     }
 
     public Car(RealisticEngineSound_mobile engineScript)
@@ -203,39 +221,53 @@ public class Car
 
         if (vertical > 0) // accelerate
         {
-            if (currentRPM < engineRedLine + 1000)
+            if (currentSpeed >= 0)
             {
-                currentSpeed += getAccelerationStrenght() * Time.deltaTime;
-                engineScript.gasPedalPressing = true;
-            }
+                if (gearBox.currentGear < 1)
+                {
+                    gearBox.currentGear = 1;
+                }
+                if (currentRPM < engineRedLine + 1000)
+                {
+                    currentSpeed += vertical * getAccelerationStrenght() * Time.deltaTime;
+                    engineScript.gasPedalPressing = true;
+                }
 
-            if (!isManual)
+                if (!isManual)
+                {
+                    if (currentRPM > engineRedLine)
+                    {
+                        gearBox.upShift();
+                    }
+                    else if (currentRPM < engineRedLine - 3000f)
+                    {
+                        gearBox.downShift();
+                    }
+                }
+            }
+            else if (currentSpeed < 0) // breaking while in reverse
             {
-                if (currentRPM > engineRedLine)
-                {
-                    gearBox.upShift();
-                }
-                else if (currentRPM < engineRedLine - 3000f)
-                {
-                    gearBox.downShift();
-                }
+                gearBox.currentGear = -1;
+                engineScript.gasPedalPressing = false;
+                currentSpeed += vertical * baseStrenght * 5 * Time.deltaTime; // break (the vertical is negative here)
             }
         }
         else if (vertical == 0) // idle
         {
             engineScript.gasPedalPressing = false;
 
-            if (currentSpeed < 1 && currentSpeed > -1)
+            if (currentSpeed < 1 && currentSpeed > -1) // car stopped
             {
+                gearBox.currentGear = 0;
                 currentSpeed = 0;
             }
-            else if (currentSpeed > 0)
+            else if (currentSpeed > 0) // slowing down in forward
             {
-                currentSpeed -= 10 * Time.deltaTime;
+                currentSpeed -= 40 * Time.deltaTime;
             }
-            else if (currentSpeed < 0)
+            else if (currentSpeed < 0) // slowing down in reverse
             {
-                currentSpeed += 10 * Time.deltaTime;
+                currentSpeed += 40 * Time.deltaTime;
             }
         }
         else if (vertical < 0) // break/reverse
@@ -243,13 +275,19 @@ public class Car
             if (currentSpeed > 0) // breaking
             {
                 engineScript.gasPedalPressing = false;
-                // currentSpeed -= (1 - 2 * vertical); // break
-                currentSpeed += vertical * 300 * Time.deltaTime; // break (the vertical is negative here)
+                currentSpeed += vertical * baseStrenght * 5 * Time.deltaTime; // break (the vertical is negative here)
             }
             else if (currentSpeed <= 0) // reversing
             {
-                currentSpeed += vertical * 10 * Time.deltaTime; // reverse
-                engineScript.gasPedalPressing = true;
+                if (gearBox.currentGear > -1)
+                {
+                    gearBox.currentGear = -1;
+                }
+                if (currentRPM < engineRedLine)
+                {
+                    currentSpeed += vertical * getAccelerationStrenght() * Time.deltaTime; // reverse
+                    engineScript.gasPedalPressing = true;
+                }
             }
         }
         if ((vertical == 1 || vertical == 0 || vertical == -1) && (currentSpeed > 1 && currentSpeed < -1))
@@ -263,11 +301,6 @@ public class Car
             {
                 gearBox.downShift();
             }
-        }
-
-        if (currentRPM > engineRedLine)
-        {
-            currentSpeed -= 1000 * Time.deltaTime;
         }
 
     }
@@ -330,7 +363,7 @@ public class Car
 public class GearBox // some default gearbox
 {
     public int gearCount = 7;
-    public int currentGear = 1;
+    public int currentGear { get; set; }
     public float finalDriveRatio = 2.37f;
     public float tireCircumInMeter = 2f;
 
@@ -363,7 +396,7 @@ public class GearBox // some default gearbox
         switch (currentGear)
         {
             case -1:
-                return -2.80f;
+                return 2.80f;
             case 0: // neutral
                 return 0f;
             case 1:
@@ -395,7 +428,7 @@ public class GearBox6SpeedMcLarenF1 : GearBox
         switch (currentGear)
         {
             case -1:
-                return -2.80f;
+                return 2.80f;
             case 0: // neutral
                 return 0f;
             case 1:
@@ -425,7 +458,7 @@ public class GearBox7SpeedMcLaren720s : GearBox
         switch (currentGear)
         {
             case -1:
-                return -2.80f;
+                return 2.80f;
             case 0: // neutral
                 return 0f;
             case 1:
@@ -458,7 +491,7 @@ public class GearBox5SpeedBMWe30 : GearBox
         switch (currentGear)
         {
             case -1:
-                return -4.23f;
+                return 4.23f;
             case 0: // neutral
                 return 0f;
             case 1:
@@ -486,7 +519,7 @@ public class GearBox7Speed_FerrariF8 : GearBox
         switch (currentGear)
         {
             case -1:
-                return -2.979f;
+                return 2.979f;
             case 0: // neutral
                 return 0f;
             case 1:
