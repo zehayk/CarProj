@@ -61,6 +61,7 @@
     <Compile Include="Assets\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\scripts\TestScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
@@ -105,6 +106,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\CarSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\scripts\FordGT_Move_player.cs" />
+    <Compile Include="Assets\scripts\f1Move_player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\NWH\ReadMe.txt" />
@@ -112,9 +115,11 @@
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\UVC\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\___www.unityassetcollection.com___.txt" />
+    <None Include="Assets\Car Models\Ford GT\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Car Engine Sound - i6 German Free\Documentation\Read Me.txt" />
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\MSK\ReadMe.txt" />
+    <None Include="Assets\Car Models\BMW m5 e60\readme.txt" />
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\MSV_Free\ReadMe.txt" />
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\VPP\ReadMe.txt" />
     <None Include="Assets\RealisticEngineSound\Assets_For_Vehicle_Controllers\Unity_Car_Pro\ReadMe.txt" />

@@ -1,0 +1,324 @@
+# Blender MTL File: 'untitled15.blend'
+# Material Count: 29
+
+newmtl Badging_Chrome4
+Ns 63.999993
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BADGING NORMAL.tga
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BADGING MASK.tga
+map_d D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BADGING MASK.tga
+
+newmtl Burlington_Leather
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\burlington_leath_bda9f9ac-a7af-4d48-a4ea-10e584d236d3\\textures_2k\\GWC Burlington Leather_Normal.jpg
+map_Kd C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\burlington_leath_bda9f9ac-a7af-4d48-a4ea-10e584d236d3\\textures_2k\\GWC Burlington Leather_BaseColor.jpg
+map_d C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\burlington_leath_bda9f9ac-a7af-4d48-a4ea-10e584d236d3\\textures_2k\\GWC Burlington Leather_BaseColor.jpg
+
+newmtl Car_Paint
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Car_Textured_Rough_Plastic
+Ns 103.074779
+Ka 1.000000 1.000000 1.000000
+Kd 0.003095 0.003095 0.003095
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Car_chrome
+Ns 799.558019
+Ka 1.000000 1.000000 1.000000
+Kd 0.350556 0.350556 0.350556
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 4.000000
+d 1.000000
+illum 3
+
+newmtl Car_paint
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.236364 0.236364 0.236364
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Car_plastic_dark
+Ns 103.074779
+Ka 1.000000 1.000000 1.000000
+Kd 0.003095 0.003095 0.003095
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Car_syntetic_net
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd B:\\veci na prodej TS\\auta\\materialy\\Car_syntetic_net\\Car_syntetic_net_BaseColor.png
+map_Ns B:\\veci na prodej TS\\auta\\materialy\\Car_syntetic_net\\Car_syntetic_net_Roughness.png
+map_d B:\\veci na prodej TS\\auta\\materialy\\Car_syntetic_net\\Car_syntetic_net_Alpha.png
+refl B:\\veci na prodej TS\\auta\\materialy\\Car_syntetic_net\\Car_syntetic_net_Metallic.png
+
+newmtl Chrome.001
+Ns 901.123736
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl DoorLine9
+Ns 3.999998
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\DOORLINE.tga
+map_d D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\DOORLINE MASK.tga
+
+newmtl Engine
+Ns 17.148395
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 ENGINE NORMAL.tga
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 ENGINE.tga
+
+newmtl Engine0
+Ns 3.999998
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 ENGINE NORMAL.tga
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 ENGINE.tga
+
+newmtl Glass
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\glass_d85db2a0-5e09-4457-a24a-0039ba2f2616\\textures_2k\\plane_divided_DefaultMaterial_Normal.jpg
+
+newmtl License
+Ns 63.999993
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\LICENSE MASK.tga
+map_d D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\LICENSE MASK.tga
+
+newmtl Material.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\glass_d85db2a0-5e09-4457-a24a-0039ba2f2616\\textures_2k\\plane_divided_DefaultMaterial_Normal.jpg
+
+newmtl Material.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\glass_d85db2a0-5e09-4457-a24a-0039ba2f2616\\textures_2k\\plane_divided_DefaultMaterial_Normal.jpg
+
+newmtl Material.004
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.006
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.007
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.010
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\glass_d85db2a0-5e09-4457-a24a-0039ba2f2616\\textures_2k\\plane_divided_DefaultMaterial_Normal.jpg
+
+newmtl Material__579
+Ns 84.448500
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BRAKELIGHT.tga
+
+newmtl Material__580
+Ns 90.509703
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BRAKELIGHT.tga
+
+newmtl Material__594
+Ns 48.502900
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 BRAKELIGHT.tga
+
+newmtl Metal_tread_panel
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Misc8
+Ns 3.999998
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.900000 0.900000 0.900000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\Temp\\M3-e92\\e92\\BMW M3 E92 MISC.tga
+
+newmtl Old_Metal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\old_metal_88dde8ea-8385-4711-ba34-04e949fcc793\\textures_2k\\Used Metal_normal.jpg
+map_Kd C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\old_metal_88dde8ea-8385-4711-ba34-04e949fcc793\\textures_2k\\Used Metal_basecolor.jpg
+map_Ns C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\old_metal_88dde8ea-8385-4711-ba34-04e949fcc793\\textures_2k\\Used Metal_roughness.jpg
+refl C:\\Users\\BiaDigi.com\\blenderkit_data\\materials\\old_metal_88dde8ea-8385-4711-ba34-04e949fcc793\\textures_2k\\Used Metal_metallic.jpg
+
+newmtl Rim
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Rim_paint
+Ns 639.999995
+Ka 1.000000 1.000000 1.000000
+Kd 0.870190 0.897092 0.897092
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+
+newmtl Tires.002
+Ns 199.999995
+Ka 1.000000 1.000000 1.000000
+Kd 0.012201 0.014196 0.018812
+Ks 0.418182 0.418182 0.418182
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:\\Parsa\\Work\\3D\\BMW\\assets\\models\\sportscar_wheel__53b20e22-a9c8-4d17-aa5d-2f8a9ee51cf0\\textures_2k\\Tires.001_Base_color.jpg
+map_Ns D:\\Parsa\\Work\\3D\\BMW\\assets\\models\\sportscar_wheel__53b20e22-a9c8-4d17-aa5d-2f8a9ee51cf0\\textures_2k\\Tires.001_Roughness.jpg
