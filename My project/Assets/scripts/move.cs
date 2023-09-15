@@ -21,6 +21,7 @@ public class move : MonoBehaviour
     //float rotSpeed = 50;
     float wheelDirection = 1;
 
+    float maxTurnAngle = 30f;
 
     float strenght = 50.0f;
     Rigidbody rigidBody;
@@ -136,13 +137,8 @@ public class move : MonoBehaviour
         // Car movement Translate
         transform.Translate(new Vector3(0, 0, myCar.currentSpeed /20) * Time.deltaTime); // myCar.currentSpeed /40
         // Car Rotate
-        if (myCar.currentSpeed > 0) {
-            transform.Rotate(new Vector3(0, horizontal / 30, 0) * Time.deltaTime * 1000);
-        }
-        else if (myCar.currentSpeed < 0)
-        {
-            transform.Rotate(new Vector3(0, -horizontal / 30, 0) * Time.deltaTime * 1000);
-        }
+        float turnAngle = horizontal * turnAngleFromSpeed(myCar.currentSpeed);
+        transform.Rotate(new Vector3(0, /*((myCar.currentSpeed > 0) ? 1 : -1) **/ turnAngle, 0) * Time.deltaTime * 1000);
 
         myCar.isManual = true;
         myCar.engineScript.isShifting = false;
@@ -160,6 +156,11 @@ public class move : MonoBehaviour
             myCar.manualShiftDown();
         }
 
+    }
+
+    public float turnAngleFromSpeed(float speed)
+    {
+        return (speed != 0) ? maxTurnAngle / speed : 0;
     }
 }
 public class XboxControlls
