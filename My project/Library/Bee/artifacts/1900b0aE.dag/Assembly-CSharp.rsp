@@ -369,6 +369,7 @@
 "Assets/RealisticEngineSound/Assets/Scripts/TurboCharger.cs"
 "Assets/RealisticEngineSound/Assets/Scripts/TurboCharger_mobile.cs"
 "Assets/scripts/bounce.cs"
+"Assets/scripts/drifty_movement.cs"
 "Assets/scripts/f1Move_player.cs"
 "Assets/scripts/FordGT_Move_player.cs"
 "Assets/scripts/InputMaster.cs"

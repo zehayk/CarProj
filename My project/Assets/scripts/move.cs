@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using TMPro;
 
 
@@ -57,15 +58,25 @@ public class move : MonoBehaviour
     void Update()
     {
         var gamepad = Gamepad.current;
+        if (gamepad == null)
+        {
+            Debug.Log("controller not connected");
+            return;
+        }
         //float vertical = Input.GetAxis("Vertical"); // forward backward
         //float horizontal = Input.GetAxis("Horizontal");
 
         float horizontal = gamepad.leftStick.x.ReadValue();
 
-        bool rTrigger = gamepad.rightTrigger.isPressed;
+        /*bool rTrigger = gamepad.rightTrigger.isPressed;
         bool lTrigger = gamepad.leftTrigger.isPressed;
 
-        float vertical = (rTrigger) ? 1f : (lTrigger) ? -1 : 0;
+        Debug.Log(gamepad.rightTrigger.ReadValue());
+
+        float vertical = (rTrigger) ? 1f : (lTrigger) ? -1 : 0;*/
+
+
+        float vertical = gamepad.rightTrigger.ReadValue() - gamepad.leftTrigger.ReadValue();
 
         // Loop car acceleration
         myCar.accelerate(vertical);
@@ -73,7 +84,7 @@ public class move : MonoBehaviour
         // RPM GAUGE AND SPEEDOMETER
         // speedoMeter.SetText("G" + myCar.gearBox.currentGear + "\n" + myCar.currentRPM + " RPM\n" + myCar.speedInKM + "km/h\nstr: " + myCar.getAccelerationStrenght());
         speedoMeter.SetText("   G" + myCar.gearBox.currentGear + "\n\n" + myCar.displaySpeedInKM + "kmh");
-        
+
         int maxRPM = 8000;
         int maxDeg = 260;
 
@@ -117,6 +128,11 @@ public class move : MonoBehaviour
             wheel.transform.Rotate(new Vector3(-myCar.wheelRPM, 0, 0) * Time.deltaTime * 10);
         }
 
+        //Debug.Log(1000000f / myCar.getAccelerationStrenght());
+        //rigidBody.AddForce(transform.forward * (1000000f / myCar.getAccelerationStrenght()) * 10 * vertical);
+        //rigidBody.velocity = new Vector3(0, -vertical / 30, 0);
+        Debug.Log(rigidBody.velocity);
+
         // Car movement Translate
         transform.Translate(new Vector3(0, 0, myCar.currentSpeed /20) * Time.deltaTime); // myCar.currentSpeed /40
         // Car Rotate
@@ -128,45 +144,58 @@ public class move : MonoBehaviour
             transform.Rotate(new Vector3(0, -horizontal / 30, 0) * Time.deltaTime * 1000);
         }
 
-        //Debug.Log(Time.fixedDeltaTime);
-        //Debug.Log(Time.deltaTime);
-
-        //GameObject childObject = transform.Find("v10_italian").gameObject;
-        //RealisticEngineSound childScript = childObject.GetComponent<RealisticEngineSound>();
-
-
-        // Engine Noise
-        //GameObject childObject = transform.Find("v8_italian").gameObject;
-        //RealisticEngineSound_mobile childScript = childObject.GetComponent<RealisticEngineSound_mobile>();
-
-
-        /*childScript.engineCurrentRPM = myCar.currentRPM;
-        if (childScript != null)
-        {
-            //Debug.Log(childScript.carMaxSpeed);
-        }
-        else
-        {
-            Debug.Log("aaaaaaaaaaa");
-        }*/
-
-
-
-
-        myCar.engineScript.isShifting = false;
-        // Gear Shifting
         myCar.isManual = true;
-        if ((Input.GetKeyDown("q") || gamepad.leftShoulder.wasPressedThisFrame) && myCar.gearBox.currentGear > 1)
+        myCar.engineScript.isShifting = false;
+    /*}
+
+    public void Update()
+    {*/
+        XboxControlls controller = new XboxControlls(myCar.gearBox);
+        if (controller.upShift())
         {
-            myCar.engineScript.isShifting = true;
-            myCar.manualShiftDown();
-        }
-        else if ((Input.GetKeyDown("e") || gamepad.rightShoulder.wasPressedThisFrame) && myCar.gearBox.currentGear < myCar.gearBox.gearCount)
-        {
-            myCar.engineScript.isShifting = true;
             myCar.manualShiftUp();
         }
+        else if (controller.downShift())
+        {
+            myCar.manualShiftDown();
+        }
+
     }
+}
+public class XboxControlls
+{
+    private GearBox _gearboxObj;
+
+    private ButtonControl _throttleBind = Gamepad.current.rightTrigger;
+    private ButtonControl _reverseBind = Gamepad.current.leftTrigger;
+    private bool _downShiftKey = Input.GetKeyDown("q");
+    private bool _upShiftKey = Input.GetKeyDown("e");
+    private ButtonControl _downShiftBind = Gamepad.current.leftShoulder;
+    private ButtonControl _upShiftBind = Gamepad.current.rightShoulder;
+
+    private StickControl _steerStick = Gamepad.current.leftStick;
+    private StickControl _freeLookStick = Gamepad.current.rightStick;
+
+    //public bool isThrottleDown { get => _throttleBind.isPressed; }
+    //public bool isReverseDown { get => _reverseBind.isPressed; }
+    //public bool isDownShifting { get => (Gamepad.current != null)}
+
+    public XboxControlls(GearBox gearBox)
+    {
+        this._gearboxObj = gearBox;
+    }
+
+    public bool isPresent() => Gamepad.current != null;
+
+    public float vertical() => (isPresent()) ? _throttleBind.ReadValue() - _reverseBind.ReadValue() : Input.GetAxis("Vertical");
+
+    public float horizontal() => (isPresent()) ? _steerStick.x.ReadValue() : Input.GetAxis("Horizontal");
+
+    public bool downShift() => ((_downShiftKey || _downShiftBind.wasPressedThisFrame) && _gearboxObj.currentGear > 1);
+
+    public bool upShift() => ((_upShiftKey || _upShiftBind.wasPressedThisFrame) && _gearboxObj.currentGear < _gearboxObj.gearCount);
+
+    public float[] freeLookCoords() => new float[] { _freeLookStick.x.ReadValue(), _freeLookStick.y.ReadValue() };
 }
 
 
@@ -191,7 +220,7 @@ public class Car
     }
     public float currentRPM
     {
-        get => (gearBox.getGearRatio() != 0) ? (this.displaySpeedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (1500f);
+        get => (gearBox.getGearRatio() != 0) ? (this.displaySpeedInKM * gearBox.getGearRatio() * gearBox.finalDriveRatio) / (this.rpmConvertCoef * gearBox.tireCircumInMeter) : (700f);
     }
     public float wheelRPM
     {
@@ -230,7 +259,7 @@ public class Car
                 {
                     gearBox.currentGear = 1;
                 }
-                if (currentRPM < engineRedLine + 1000)
+                if (currentRPM < engineRedLine)
                 {
                     currentSpeed += vertical * getAccelerationStrenght() * Time.deltaTime;
                     engineScript.gasPedalPressing = true;
@@ -312,6 +341,7 @@ public class Car
     {
         if (isManual)
         {
+            engineScript.isShifting = true;
             gearBox.upShift();
         }
     }
@@ -320,6 +350,7 @@ public class Car
     {
         if (isManual)
         {
+            engineScript.isShifting = true;
             gearBox.downShift();
         }
     }
@@ -380,8 +411,11 @@ public class GearBox // some default gearbox
 
     public void upShift()
     {
+        Debug.Log(currentGear);
+        Debug.Log(gearCount);
         if (currentGear < gearCount)
         {
+            Debug.Log("a");
             currentGear++;
         }
     }
