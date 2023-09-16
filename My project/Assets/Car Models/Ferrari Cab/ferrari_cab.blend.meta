@@ -3,7 +3,22 @@ guid: f87faa54698156346b72c0139d0244be
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: d1e5c6db2c8845c4c89b7a6d6035891a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass.001
+    second: {fileID: 2100000, guid: 36d9b2a756b363a4f83580c7c68bf8fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: right front light
+    second: {fileID: 2100000, guid: fbab3efab0995fa4a9cbcabc02f4b2d6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

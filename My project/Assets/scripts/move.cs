@@ -30,6 +30,11 @@ public class move : MonoBehaviour
 
     float needleAngle = 0;
 
+    Material noGlowRedMaterial;
+    Material glowRedMaterial;
+
+    GameObject tailLights;
+
     //RealisticEngineSound_mobile engineScript = transform.Find("v8_italian").gameObject.GetComponent<RealisticEngineSound_mobile>();
     //Car myCar = new Car(engineScript);
     Car myCar;
@@ -53,6 +58,9 @@ public class move : MonoBehaviour
 
         RealisticEngineSound_mobile engineScript = transform.Find("v8_italian").gameObject.GetComponent<RealisticEngineSound_mobile>();
         myCar = new Car(engineScript);
+
+        noGlowRedMaterial = Resources.Load("Materials/Glass.001", typeof(Material)) as Material;
+        glowRedMaterial = Resources.Load("Materials/Glass.001.Glowing", typeof(Material)) as Material;
     }
 
     // Update is called once per frame
@@ -104,6 +112,19 @@ public class move : MonoBehaviour
         GameObject[] frontWheels = { ferrariF8.Find("wheel_rf_dummy").gameObject, ferrariF8.Find("wheel_lf_dummy").gameObject };
         GameObject[] backWheels = { ferrariF8.Find("wheel_rb_dummy").gameObject, ferrariF8.Find("wheel_lb_dummy").gameObject };
 
+
+        tailLights = ferrariF8.Find("chassis_dummy").Find("body").Find("lights_ok").Find("red").gameObject;
+        
+        if (myCar.isBreaking)
+        {
+            tailLights.GetComponent<Renderer>().sharedMaterial = glowRedMaterial;
+        }
+        else
+        {
+            tailLights.GetComponent<Renderer>().sharedMaterial = noGlowRedMaterial;
+        }
+        
+
         //wheelRR.transform.Rotate(new Vector3(wheelSpeed, 0, 0) * Time.deltaTime * 1000);
         //wheelRR.transform.eulerAngles = new Vector3(transform.eulerAngles.x + needleAngle, transform.eulerAngles.y, transform.eulerAngles.z);
 
@@ -132,11 +153,13 @@ public class move : MonoBehaviour
         //Debug.Log(1000000f / myCar.getAccelerationStrenght());
         //rigidBody.AddForce(transform.forward * (1000000f / myCar.getAccelerationStrenght()) * 10 * vertical);
         //rigidBody.velocity = new Vector3(0, -vertical / 30, 0);
-        Debug.Log(rigidBody.velocity);
+        //-Debug.Log(rigidBody.velocity);
 
         // Car movement Translate
         transform.Translate(new Vector3(0, 0, myCar.currentSpeed /20) * Time.deltaTime); // myCar.currentSpeed /40
         // Car Rotate
+        //-Debug.Log(turnAngleFromSpeed(myCar.currentSpeed));
+        //-Debug.Log(myCar.currentSpeed);
         float turnAngle = horizontal * turnAngleFromSpeed(myCar.currentSpeed);
         transform.Rotate(new Vector3(0, /*((myCar.currentSpeed > 0) ? 1 : -1) **/ turnAngle, 0) * Time.deltaTime * 1000);
 
@@ -160,7 +183,13 @@ public class move : MonoBehaviour
 
     public float turnAngleFromSpeed(float speed)
     {
-        return (speed != 0) ? maxTurnAngle / speed : 0;
+        if (speed > 0 && speed < 1)
+        {
+            speed = 1;
+        }
+        float speedTurnAngle = (speed != 0) ? maxTurnAngle / (speed) : 0;
+
+        return speedTurnAngle;
     }
 }
 public class XboxControlls
@@ -215,6 +244,9 @@ public class Car
     public float currentSpeed { get; set; }
     public RealisticEngineSound_mobile engineScript;
 
+    public bool isBreaking = true;
+    public bool isReverse = false;
+
     public float displaySpeedInKM
     {
         get => Math.Abs((float)Math.Round(currentSpeed / 10, 1));
@@ -254,6 +286,9 @@ public class Car
 
         if (vertical > 0) // accelerate
         {
+            isBreaking = false;
+            isReverse = false;
+
             if (currentSpeed >= 0)
             {
                 if (gearBox.currentGear < 1)
@@ -280,6 +315,9 @@ public class Car
             }
             else if (currentSpeed < 0) // breaking while in reverse
             {
+                isBreaking = true;
+                isReverse = true;
+
                 gearBox.currentGear = -1;
                 engineScript.gasPedalPressing = false;
                 currentSpeed += vertical * baseStrenght * 5 * Time.deltaTime; // break (the vertical is negative here)
@@ -287,11 +325,15 @@ public class Car
         }
         else if (vertical == 0) // idle
         {
+            isBreaking = false;
+            isReverse = false;
+
             engineScript.gasPedalPressing = false;
 
             if (currentSpeed < 1 && currentSpeed > -1) // car stopped
             {
                 gearBox.currentGear = 0;
+                isBreaking = true;
                 currentSpeed = 0;
             }
             else if (currentSpeed > 0) // slowing down in forward
@@ -307,11 +349,17 @@ public class Car
         {
             if (currentSpeed > 0) // breaking
             {
+                isBreaking = true;
+                isReverse = false;
+
                 engineScript.gasPedalPressing = false;
                 currentSpeed += vertical * baseStrenght * 5 * Time.deltaTime; // break (the vertical is negative here)
             }
             else if (currentSpeed <= 0) // reversing
             {
+                isBreaking = false;
+                isReverse = true;
+
                 if (gearBox.currentGear > -1)
                 {
                     gearBox.currentGear = -1;
