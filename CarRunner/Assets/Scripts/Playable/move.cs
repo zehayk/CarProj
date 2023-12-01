@@ -45,7 +45,7 @@ public class move : MonoBehaviour
         //myResults = otherGameObject.GetComponentInParent<ComponentType>()
 
         //myCar = new Car(140, 7000, 40, 1550, 0, 2);
-        wheels = GameObject.FindGameObjectsWithTag("FrontWheels");
+        wheels = GameObject.FindGameObjectsWithTag("FRONT_WHEELS");
         //foreach (var wheel in wheels) { 
         //    wheel.transform.rotation = startRotation;
         //}
@@ -56,7 +56,7 @@ public class move : MonoBehaviour
         rpmNeedle = GameObject.Find("RPMNeedle").GetComponent<RawImage>();
 
 
-        RealisticEngineSound_mobile engineScript = transform.Find("v8_italian").gameObject.GetComponent<RealisticEngineSound_mobile>();
+        RealisticEngineSound_mobile engineScript = transform.Find("i6_german_interior").gameObject.GetComponent<RealisticEngineSound_mobile>();
         myCar = new Car(engineScript);
 
         noGlowRedMaterial = Resources.Load("Materials/Glass.001", typeof(Material)) as Material;
@@ -109,8 +109,8 @@ public class move : MonoBehaviour
         //wheelRR.transform.Rotate(new Vector3(0, 0, 5) * Time.deltaTime * 10);
 
         Transform ferrariF8 = transform.Find("Ferrari F8");
-        GameObject[] frontWheels = { ferrariF8.Find("wheel_rf_dummy").gameObject, ferrariF8.Find("wheel_lf_dummy").gameObject };
-        GameObject[] backWheels = { ferrariF8.Find("wheel_rb_dummy").gameObject, ferrariF8.Find("wheel_lb_dummy").gameObject };
+        GameObject[] frontWheels = { ferrariF8.Find("WHEEL_RF").gameObject, ferrariF8.Find("WHEEL_LF").gameObject };
+        GameObject[] backWheels = { ferrariF8.Find("WHEEL_RR").gameObject, ferrariF8.Find("WHEEL_LR").gameObject };
 
 
         tailLights = ferrariF8.Find("chassis_dummy").Find("body").Find("lights_ok").Find("red").gameObject;
