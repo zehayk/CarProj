@@ -36,13 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSceneTool.cs" />
      <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSpawner.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathPlacer.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathFollower.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
      <Compile Include="Assets\Scripts\Roads\ProceduralRoadScript.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathPlacer.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathFollower.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+     <Compile Include="Assets\Scripts\Playable\move.cs" />
     <Reference Include="UnityEngine">
         <HintPath>E:\Unity\Editor\2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -329,6 +329,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/PathCreator.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PathCreatorEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
@@ -360,6 +361,7 @@
 "Assets/Imports/PathCreator/Examples/Scripts/PathSceneTool.cs"
 "Assets/Imports/PathCreator/Examples/Scripts/PathSpawner.cs"
 "Assets/Imports/PathCreator/Examples/Scripts/RoadMeshCreator.cs"
+"Assets/Scripts/Playable/move.cs"
 "Assets/Scripts/Roads/ProceduralRoadScript.cs"
 -langversion:9.0
 

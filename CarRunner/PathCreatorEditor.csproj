@@ -36,10 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Imports\PathCreator\Core\Editor\PathEditor.cs" />
+     <Compile Include="Assets\Imports\PathCreator\Core\Editor\Helper\PathHandle.cs" />
      <Compile Include="Assets\Imports\PathCreator\Core\Editor\Helper\ScreenSpacePolyLine.cs" />
      <Compile Include="Assets\Imports\PathCreator\Core\Editor\Helper\MouseUtility.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Core\Editor\Helper\PathHandle.cs" />
-     <Compile Include="Assets\Imports\PathCreator\Core\Editor\PathEditor.cs" />
      <None Include="Assets\Imports\PathCreator\Core\Editor\PathCreatorEditor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>E:\Unity\Editor\2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

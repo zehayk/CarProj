@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{de24234b-c13a-3b90-f74b-4317804e430e}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{384201e0-e4cd-cba0-c2ef-8ba9dba9ea89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreator", "PathCreator.csproj", "{de24234b-c13a-3b90-f74b-4317804e430e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathCreatorEditor", "PathCreatorEditor.csproj", "{52e7914f-792a-119c-754a-0c682980194b}"
 EndProject
@@ -14,10 +14,10 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{de24234b-c13a-3b90-f74b-4317804e430e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{de24234b-c13a-3b90-f74b-4317804e430e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{384201e0-e4cd-cba0-c2ef-8ba9dba9ea89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{384201e0-e4cd-cba0-c2ef-8ba9dba9ea89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{de24234b-c13a-3b90-f74b-4317804e430e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{de24234b-c13a-3b90-f74b-4317804e430e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52e7914f-792a-119c-754a-0c682980194b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52e7914f-792a-119c-754a-0c682980194b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{675dad04-9b18-0b85-a6e4-9ecae5dcbeb1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
