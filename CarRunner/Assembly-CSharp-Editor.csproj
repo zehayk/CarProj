@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\RealisticEngineSound\Editor\RealisticEngineSoundEditor.cs" />
+     <Compile Include="Assets\Imports\RealisticEngineSound\Editor\RealisticEngineSoundEditor.cs" />
      <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>E:\Unity\Editor\2021.3.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
