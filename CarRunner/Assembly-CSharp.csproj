@@ -56,12 +56,15 @@
     <Analyzer Include="E:\Programming\Visual Studio\2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\engine\inputConstants.cs" />
     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSoundRandom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
     <Compile Include="Assets\Scripts\Playable\old_move.cs" />
+    <Compile Include="Assets\Scripts\Roads\RoadMeshCreatorCustom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
+    <Compile Include="Assets\Scripts\engine\LateExe.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\DemoController.cs" />
@@ -77,12 +80,9 @@
     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger_mobile.cs" />
+    <Compile Include="Assets\Scripts\engine\inputHandler.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\CarSimulator.cs" />
     <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
-    <Compile Include="Assets\Scripts\engine\inputHandler.cs" />
-    <Compile Include="Assets\Scripts\engine\inputConstants.cs" />
-    <Compile Include="Assets\Scripts\engine\LateExe.cs" />
-    <Compile Include="Assets\Scripts\Roads\RoadMeshCreatorCustom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\RealisticEngineSound\Assets_For_Vehicle_Controllers\NWH\ReadMe.txt" />

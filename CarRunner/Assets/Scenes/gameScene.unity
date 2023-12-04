@@ -344,10 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0826008a9b3e63408da53680ed00232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingPoint: {x: 0, y: 0, z: 0}
-  Left90: {fileID: 6990183257500192136, guid: 40f494a38580586488bf07c92e0a5e78, type: 3}
-  Right90: {fileID: 1418281861586927249, guid: 12540a45bcbdb314892d85f6e9c83d2d, type: 3}
-  Straight: {fileID: 2617488682672777012, guid: ebed8c73be2583c4c8cd96ba92c3b7ee, type: 3}
+  FirstPoint: {x: 0, y: 0, z: 0}
+  BaseRoad: {fileID: 5472224213644839605, guid: 4d956e23d84335743a218ceb6f0f8baf, type: 3}
 --- !u!4 &2033523366
 Transform:
   m_ObjectHideFlags: 0
