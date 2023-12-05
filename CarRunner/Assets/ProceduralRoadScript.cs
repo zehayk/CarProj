@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProceduralRoadScript : MonoBehaviour
 {
-    public int roadLength = 20;
+    public int roadLength = 40;
     public GameObject BaseRoad;
     private Queue<GameObject> RoadQueue = new Queue<GameObject>();
     private GameObject player;
@@ -15,15 +15,17 @@ public class ProceduralRoadScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
         currentRoad = Instantiate(BaseRoad, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
         CurvedRoadPiece myScriptComponent = currentRoad.GetComponent<CurvedRoadPiece>();
         myScriptComponent.startPoint = this.transform.position;
         myScriptComponent.endPoint = GetRandomPoint(myScriptComponent.startPoint);
         LastPosition = myScriptComponent.endPoint;
         FirstPosition = myScriptComponent.startPoint;
+        myScriptComponent.Initialize(currentRoad);
         RoadQueue.Enqueue(currentRoad);
     }
-
+    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -42,13 +44,14 @@ public class ProceduralRoadScript : MonoBehaviour
         Vector3 PrevEndPoint = LastPosition;
         Vector3 NewEndPoint = GetRandomPoint(PrevEndPoint);
 
-        currentRoad = Instantiate(BaseRoad, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject NextRoad = Instantiate(BaseRoad, new Vector3(0, 0, 0), Quaternion.identity);
 
-        CurvedRoadPiece CurrendRoadSettings = currentRoad.GetComponent<CurvedRoadPiece>();
+        CurvedRoadPiece CurrendRoadSettings = NextRoad.GetComponent<CurvedRoadPiece>();
         CurrendRoadSettings.startPoint = PrevEndPoint;
         CurrendRoadSettings.endPoint = NewEndPoint;
-
-        RoadQueue.Enqueue(currentRoad);
+        CurrendRoadSettings.Initialize(currentRoad);
+        RoadQueue.Enqueue(NextRoad);
+        currentRoad = NextRoad;
 
         // Update LastPosition after setting the endPoint
         LastPosition = CurrendRoadSettings.endPoint;
@@ -63,8 +66,8 @@ public class ProceduralRoadScript : MonoBehaviour
 
     private Vector3 GetRandomPoint(Vector3 lastVector)
     {
-        float NumZ = Random.Range(-5, 5);
-        Vector3 lastPointAdd = new Vector3(lastVector.x + 20, 0, lastVector.z + NumZ);
+        float NumZ = Random.Range(-15, 15);
+        Vector3 lastPointAdd = new Vector3(lastVector.x + roadLength, 0, lastVector.z + NumZ);
         return lastPointAdd;
     }
 }

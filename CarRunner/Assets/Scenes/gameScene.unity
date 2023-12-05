@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cfe11b833d7d764c886b69648263eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadLength: 20
+  roadLength: 40
   BaseRoad: {fileID: 8437789474087295615, guid: 00b7937f8b4251940bb1b9f516ccaff1, type: 3}
 --- !u!4 &1780773241
 Transform:
