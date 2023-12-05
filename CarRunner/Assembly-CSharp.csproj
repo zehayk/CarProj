@@ -56,15 +56,14 @@
     <Analyzer Include="E:\Programming\Visual Studio\2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\engine\inputConstants.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSpawner.cs" />
+    <Compile Include="Assets\Old\Scripts\engine\inputConstants.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSoundRandom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
-    <Compile Include="Assets\Scripts\Playable\old_move.cs" />
-    <Compile Include="Assets\Scripts\Roads\RoadMeshCreatorCustom.cs" />
+    <Compile Include="Assets\Old\Scripts\old_move.cs" />
+    <Compile Include="Assets\Old\PathCreator\RoadMeshCreatorCustom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
-    <Compile Include="Assets\Scripts\engine\LateExe.cs" />
+    <Compile Include="Assets\Old\Scripts\engine\LateExe.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\DemoController.cs" />
@@ -72,17 +71,12 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\MufflerRandom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler.cs" />
-    <Compile Include="Assets\Scripts\Roads\ProceduralRoadScript.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathPlacer.cs" />
+    <Compile Include="Assets\Old\PathCreator\ProceduralRoadScript.cs" />
     <Compile Include="Assets\Scripts\Playable\CarController.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler_mob.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathSceneTool.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\PathFollower.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger_mobile.cs" />
-    <Compile Include="Assets\Scripts\engine\inputHandler.cs" />
+    <Compile Include="Assets\Old\Scripts\engine\inputHandler.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\CarSimulator.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\RealisticEngineSound\Assets_For_Vehicle_Controllers\NWH\ReadMe.txt" />
@@ -805,14 +799,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="PathCreator.csproj">
-      <Project>{4B2324DE-3AC1-903B-F74B-4317804E430E}</Project>
-      <Name>PathCreator</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{4F91E752-2A79-9C11-754A-0C682980194B}</Project>
-      <Name>PathCreatorEditor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

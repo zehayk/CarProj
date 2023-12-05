@@ -339,8 +339,6 @@
 -r:"E:/Unity/Editor/2021.3.8f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
 -r:"E:/Unity/Editor/2021.3.8f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/PathCreator.ref.dll"
--r:"Library/Bee/artifacts/1900b0aE.dag/PathCreatorEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
@@ -370,9 +368,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Imports/PathCreator/Examples/Scripts/Editor/PathSceneToolEditor.cs"
 "Assets/Imports/RealisticEngineSound/Editor/RealisticEngineSoundEditor.cs"
-"Assets/Scripts/Editor/CustomEditor.cs"
+"Assets/Old/Scripts/Editor/CustomEditor.cs"
 -langversion:9.0
 
 /deterministic

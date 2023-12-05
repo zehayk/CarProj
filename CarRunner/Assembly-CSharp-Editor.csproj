@@ -56,9 +56,8 @@
     <Analyzer Include="E:\Programming\Visual Studio\2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Editor\CustomEditor.cs" />
+    <Compile Include="Assets\Old\Scripts\Editor\CustomEditor.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Editor\RealisticEngineSoundEditor.cs" />
-    <Compile Include="Assets\Imports\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -813,14 +812,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{E0014238-CDE4-A0CB-C2EF-8BA9DBA9EA89}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreator.csproj">
-      <Project>{4B2324DE-3AC1-903B-F74B-4317804E430E}</Project>
-      <Name>PathCreator</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{4F91E752-2A79-9C11-754A-0C682980194B}</Project>
-      <Name>PathCreatorEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
