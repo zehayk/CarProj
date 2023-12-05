@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/CurvedRoadPiece.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/Demo Scene Scripts/SliderDemoScripts/CarSimulator.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/Demo Scene Scripts/SliderDemoScripts/DemoController.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/Muffler.cs"
@@ -368,12 +369,7 @@
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/SuperCharger_mobile.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/TurboCharger.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/TurboCharger_mobile.cs"
-"Assets/Old/PathCreator/ProceduralRoadScript.cs"
-"Assets/Old/PathCreator/RoadMeshCreatorCustom.cs"
-"Assets/Old/Scripts/engine/inputConstants.cs"
-"Assets/Old/Scripts/engine/inputHandler.cs"
-"Assets/Old/Scripts/engine/LateExe.cs"
-"Assets/Old/Scripts/old_move.cs"
+"Assets/ProceduralRoadScript.cs"
 "Assets/Scripts/Playable/CarController.cs"
 -langversion:9.0
 

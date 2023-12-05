@@ -369,7 +369,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Imports/RealisticEngineSound/Editor/RealisticEngineSoundEditor.cs"
-"Assets/Old/Scripts/Editor/CustomEditor.cs"
 -langversion:9.0
 
 /deterministic
