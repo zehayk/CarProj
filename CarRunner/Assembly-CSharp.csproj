@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound_mobile.cs" />
-    <Compile Include="Assets\CurvedRoadPiece.cs" />
+    <Compile Include="Assets\Scripts\CurvedRoadPiece.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSoundRandom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
@@ -70,7 +70,7 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler.cs" />
     <Compile Include="Assets\Scripts\Playable\CarController.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler_mob.cs" />
-    <Compile Include="Assets\ProceduralRoadScript.cs" />
+    <Compile Include="Assets\Scripts\ProceduralRoadScript.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\CarSimulator.cs" />
   </ItemGroup>
