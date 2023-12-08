@@ -42,6 +42,9 @@ public class CarController : MonoBehaviour {
             axleInfo.leftWheel.brakeTorque = brakes;
             axleInfo.rightWheel.brakeTorque = brakes;
         }
+
+        axleInfos[0].rightWheel.brakeTorque = Controls.westbutton() * 1000000;
+        axleInfos[0].leftWheel.brakeTorque = Controls.westbutton() * 1000000;
     }
 }
     
@@ -60,6 +63,8 @@ public class basicController {
     private ButtonControl _leftShoulder = Gamepad.current.leftShoulder;
     private ButtonControl _rightShoulder = Gamepad.current.rightShoulder;
 
+    private ButtonControl ButtonWest = Gamepad.current.buttonWest;
+
     private StickControl _leftStick = Gamepad.current.leftStick;
     private StickControl _rightStick = Gamepad.current.rightStick;
 
@@ -73,6 +78,9 @@ public class basicController {
     // public bool downShift() => ((_downShiftKey || _downShiftBind.wasPressedThisFrame) && _gearboxObj.currentGear > 1);
     // public bool upShift() => ((_upShiftKey || _upShiftBind.wasPressedThisFrame) && _gearboxObj.currentGear < _gearboxObj.gearCount);
     public float[] rightStick() => new float[] { _rightStick.x.ReadValue(), _rightStick.y.ReadValue() };
+
+    // X / Square
+    public int westbutton() => (isPresent() && ButtonWest.isPressed) ? 1 : 0;
 
     public basicController()
     {
