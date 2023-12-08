@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8437789474087295601}
   m_Layer: 0
   m_Name: RoadPiece
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
-  roadWidth: 20
+  roadWidth: 4
   segments: 10
   roadMaterial: {fileID: 2100000, guid: cbba52b0b729ef14f9ec6d53795f9cf3, type: 2}
 --- !u!33 &8437789474087295607

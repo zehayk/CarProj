@@ -370,7 +370,10 @@
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/TurboCharger_mobile.cs"
 "Assets/Scripts/CurvedRoadPiece.cs"
 "Assets/Scripts/Playable/CarController.cs"
+"Assets/Scripts/ProceduralHighwayScript.cs"
 "Assets/Scripts/ProceduralRoadScript.cs"
+"Assets/Scripts/SideWall.cs"
+"Assets/Scripts/WallSpawnerScript.cs"
 -langversion:9.0
 
 /deterministic

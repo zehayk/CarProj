@@ -68,11 +68,14 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\MufflerRandom.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler.cs" />
+    <Compile Include="Assets\Scripts\ProceduralHighwayScript.cs" />
     <Compile Include="Assets\Scripts\Playable\CarController.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler_mob.cs" />
     <Compile Include="Assets\Scripts\ProceduralRoadScript.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger_mobile.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Demo Scene Scripts\SliderDemoScripts\CarSimulator.cs" />
+    <Compile Include="Assets\Scripts\SideWall.cs" />
+    <Compile Include="Assets\Scripts\WallSpawnerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\RealisticEngineSound\Assets_For_Vehicle_Controllers\NWH\ReadMe.txt" />

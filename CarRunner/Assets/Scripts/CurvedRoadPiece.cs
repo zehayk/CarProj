@@ -10,7 +10,7 @@ public class CurvedRoadPiece : MonoBehaviour
 {
     public Vector3 startPoint;
     public Vector3 endPoint;
-    public float roadWidth = 20f;
+    public float roadWidth = 4f;
     public int segments = 10;
     public Material roadMaterial;
     private GameObject previousRoad;
@@ -48,19 +48,17 @@ public class CurvedRoadPiece : MonoBehaviour
         List<Vector2> uv = new List<Vector2>();
 
         // Moving start based on previous location
-        Vector3 currentRoadDirection = (endPoint - startPoint);
+        /*Vector3 currentRoadDirection = (endPoint - startPoint);
         Vector3 previousRoadDirection = (previousRoad.GetComponent<CurvedRoadPiece>().endPoint - previousRoad.GetComponent<CurvedRoadPiece>().startPoint);
 
         float angleChange = Vector3.Angle(previousRoadDirection, currentRoadDirection);
 
         float x = roadWidth * Mathf.Sin(angleChange) * Mathf.Cos(angleChange);
-        float z = roadWidth * Mathf.Pow(Mathf.Sin(angleChange), 2);
+        float z = roadWidth * Mathf.Pow(Mathf.Sin(angleChange), 2);*/
 
         //startPoint = startPoint + new Vector3(x, startPoint.y, z);
 
-        Debug.Log("Base Length:" + new Vector3(x, startPoint.y, z));
-        Debug.Log("Base Length:" + startPoint);
-        Debug.Log("Angle Change: " + angleChange);
+        // Debug.Log("Start Point:" + startPoint);
 
         // Triangle Mesh Creation
         for (int i = 0; i <= segments; i++)
