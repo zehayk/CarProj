@@ -373,6 +373,7 @@
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/SuperCharger_mobile.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/TurboCharger.cs"
 "Assets/Imports/RealisticEngineSound/Assets/Scripts/TurboCharger_mobile.cs"
+"Assets/Scripts/CameraScript.cs"
 "Assets/Scripts/Controls.cs"
 "Assets/Scripts/CurvedRoadPiece.cs"
 "Assets/Scripts/MainMenu.cs"

@@ -1,0 +1,14 @@
+Remaining requirements:
+
+- Have a playable car that can turn and accelerate/ reverse (has both front-facing and rear view cameras), 
+the player should be able to switch to rear view camera by holding down the "R" key
+
+- The player gains 10 points for every 5 second he has remains alive
+
+- Create enemy car AI that starts chasing player car continually going the same speed as the player's top speed.
+
+- The game ends when the enemy touches the car and displays a leaderboardMenu with top 5 and the player's score. If player's score is top 5, display it in red highlight and say new highscore! The player can choose between "play again" in the middle of the screen or "quit" at the bottom right of the screen.
+
+- The player can pickup powerups along the way to increase the distance between him and the enemy or add to his score +50points
+
+- The player can receive debuffs and slow down slightly (for 0.3s) and allow the enemy to catchup to him

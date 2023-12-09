@@ -77,6 +77,7 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound_mobile.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
+    <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\ProceduralRoadScript.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSoundRandom.cs" />
   </ItemGroup>
