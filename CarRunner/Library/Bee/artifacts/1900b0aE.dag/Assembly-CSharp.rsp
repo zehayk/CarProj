@@ -376,6 +376,8 @@
 "Assets/Scripts/CameraScript.cs"
 "Assets/Scripts/Controls.cs"
 "Assets/Scripts/CurvedRoadPiece.cs"
+"Assets/Scripts/DestroyOnCollision.cs"
+"Assets/Scripts/EnemyMovement.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Playable/CarController.cs"
 "Assets/Scripts/ProceduralHighwayScript.cs"

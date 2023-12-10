@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Playable\CarController.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\Muffler.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\SideWall.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\ShiftingSound.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
     <Compile Include="Assets\Scripts\CurvedRoadPiece.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger.cs" />
+    <Compile Include="Assets\Scripts\DestroyOnCollision.cs" />
     <Compile Include="Assets\Scripts\WallSpawnerScript.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound_mobile.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ControlsMenu
   - MainMenu
+  - Road
+  - Enemy
   layers:
   - Default
   - TransparentFX
