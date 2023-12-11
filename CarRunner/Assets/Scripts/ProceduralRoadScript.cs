@@ -9,6 +9,7 @@ public class ProceduralRoadScript : MonoBehaviour
     private Queue<GameObject> RoadQueue = new Queue<GameObject>();
     private GameObject player;
     private GameObject currentRoad;
+    public Vector3 StartingPoint;
     private Vector3 LastPosition;
     private Vector3 FirstPosition;
     // Start is called before the first frame update
@@ -16,9 +17,13 @@ public class ProceduralRoadScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        currentRoad = Instantiate(BaseRoad, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+        if (StartingPoint == null)
+        {
+            StartingPoint = new Vector3(0, 0, 0);
+        }
+        currentRoad = Instantiate(BaseRoad, new Vector3(StartingPoint.x, 0, StartingPoint.z), Quaternion.identity);
         CurvedRoadPiece myScriptComponent = currentRoad.GetComponent<CurvedRoadPiece>();
-        myScriptComponent.startPoint = this.transform.position;
+        myScriptComponent.startPoint = StartingPoint;
         myScriptComponent.endPoint = GetRandomPoint(myScriptComponent.startPoint);
         LastPosition = myScriptComponent.endPoint;
         FirstPosition = myScriptComponent.startPoint;
@@ -29,11 +34,11 @@ public class ProceduralRoadScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Vector3.Distance(player.transform.position, LastPosition) < roadLength*4f)
+        if (Vector3.Distance(player.transform.position, LastPosition) < roadLength*12f)
         {
             AddEndSection();
         }
-        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 3f)
+        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 8f)
         {
 
             RemoveFirstRoadSection();
@@ -66,8 +71,9 @@ public class ProceduralRoadScript : MonoBehaviour
 
     private Vector3 GetRandomPoint(Vector3 lastVector)
     {
-        float NumZ = Random.Range(-15, 15);
-        Vector3 lastPointAdd = new Vector3(lastVector.x + roadLength, 0, lastVector.z + NumZ);
+        // float NumZ = Random.Range(-15, 15);
+        float NumZ = 0;
+        Vector3 lastPointAdd = new Vector3(lastVector.x + roadLength, lastVector.y, lastVector.z + NumZ);
         return lastPointAdd;
     }
 }

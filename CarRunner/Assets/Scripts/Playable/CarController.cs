@@ -19,6 +19,7 @@ public class CarController : MonoBehaviour {
     public Rigidbody rb;
 
     void Start() {
+        Debug.Log("Game has started");
         Controls = new basicController();
 
         rb = GetComponent<Rigidbody>();
@@ -26,9 +27,15 @@ public class CarController : MonoBehaviour {
     }   
     void FixedUpdate()
     {
-        float motor = maxMotorTorque * Controls.rightTrig();
-        float brakes = maxBrakeTorque * Controls.leftShoulder();
-        float steering = maxSteeringAngle * Controls.leftStick();
+        //float motor = maxMotorTorque * Controls.rightTrig();
+        //float brakes = maxBrakeTorque * Controls.leftShoulder();
+        //float steering = maxSteeringAngle * Controls.leftStick();
+        // Adjust the following input names based on your needs
+
+        float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        float brakes = Input.GetKey(KeyCode.Space) ? maxBrakeTorque : 0f;
+        float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
                 axleInfo.leftWheel.steerAngle = steering;
