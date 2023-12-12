@@ -376,6 +376,7 @@
 "Assets/Scripts/Controls.cs"
 "Assets/Scripts/DestroyOnCollision.cs"
 "Assets/Scripts/EnemyMovement.cs"
+"Assets/Scripts/GameManagerScript.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Playable/CarController.cs"
 "Assets/Scripts/RoadSripts/CurvedRoadPiece.cs"

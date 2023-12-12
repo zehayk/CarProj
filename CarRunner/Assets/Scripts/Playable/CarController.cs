@@ -11,6 +11,7 @@ public class CarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; // the information about each individual axle
     public float maxMotorTorque; // maximum torque the motor can apply to wheel
     public float maxBrakeTorque; // maximum torque the motor can apply to wheel
+    public float maxHandBrakeTorque; // maximum torque the motor can apply to wheel
     public float maxSteeringAngle; // maximum steer angle the wheel can have
     private basicController Controls;
 
@@ -28,6 +29,7 @@ public class CarController : MonoBehaviour {
     {
         float motor = maxMotorTorque * Controls.rightMinusLeftTrig();
         float brakes = maxBrakeTorque * Controls.leftShoulder();
+        float handBrake = maxHandBrakeTorque * Controls.westbutton();
         float steering = maxSteeringAngle * Controls.leftStick();
 
 
@@ -45,8 +47,8 @@ public class CarController : MonoBehaviour {
             axleInfo.rightWheel.brakeTorque = brakes;
         }
 
-        axleInfos[0].rightWheel.brakeTorque = Controls.westbutton() * 1000000;
-        axleInfos[0].leftWheel.brakeTorque = Controls.westbutton() * 1000000;
+        axleInfos[0].rightWheel.brakeTorque = handBrake;
+        axleInfos[0].leftWheel.brakeTorque = handBrake;
     }
 }
     

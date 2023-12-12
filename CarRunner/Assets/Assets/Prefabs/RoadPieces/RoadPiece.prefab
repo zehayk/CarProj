@@ -49,9 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
-  roadWidth: 4
+  roadWidth: 5
   segments: 10
-  roadMaterial: {fileID: 2100000, guid: cbba52b0b729ef14f9ec6d53795f9cf3, type: 2}
+  roadMaterial: {fileID: 2100000, guid: cfdb432ee6118ca41a0b6d205908bad3, type: 2}
 --- !u!33 &8437789474087295607
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cbba52b0b729ef14f9ec6d53795f9cf3, type: 2}
+  - {fileID: 2100000, guid: cfdb432ee6118ca41a0b6d205908bad3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

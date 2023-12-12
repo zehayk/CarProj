@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793793167465846825}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1793793167465846838
 MonoBehaviour:
@@ -47,7 +47,7 @@ MonoBehaviour:
   startPoint: {x: -40, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   isLeftSide: 1
-  wallMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  wallMaterial: {fileID: 2100000, guid: 1c9ad3eeabe249e46b3332bbd75694f8, type: 2}
   CubePrefab: {fileID: 8187980571061191167, guid: a6f20fc96dbf4194996ee8416bae1ee5, type: 3}
   HighwayHeight: 4.88
   roadLength: 40

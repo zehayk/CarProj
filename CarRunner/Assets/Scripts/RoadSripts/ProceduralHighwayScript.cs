@@ -17,7 +17,7 @@ public class ProceduralHighwayScript : MonoBehaviour
         GameObject ProceduralHighway = null;
         for (int i = 0; i < 4; i++)
         {
-            ProceduralHighway = Instantiate(RoadPrefab, new Vector3(this.transform.position.x-120, 0, this.transform.position.z + (4*i - 6)), Quaternion.identity);
+            ProceduralHighway = Instantiate(RoadPrefab, new Vector3(this.transform.position.x-120, 0, this.transform.position.z + (5*i - 7.5f)), Quaternion.identity);
             ProceduralRoadScript ProceduralRoadScript = ProceduralHighway.GetComponent<ProceduralRoadScript>();
             ProceduralRoadScript.StartingPoint = ProceduralHighway.transform.position;
             ProceduralHighway.transform.parent = this.transform;
@@ -26,13 +26,13 @@ public class ProceduralHighwayScript : MonoBehaviour
 
         // Adding walls
         // Left Wall
-        ProceduralHighway = Instantiate(WallPrefab, new Vector3(this.transform.position.x - 80, 0, this.transform.position.z + 8), Quaternion.identity);
+        ProceduralHighway = Instantiate(WallPrefab, new Vector3(this.transform.position.x - 80, 0, this.transform.position.z + 10), Quaternion.identity);
         WallSpawnerScript WallSpawnerScriptLeft = ProceduralHighway.GetComponent<WallSpawnerScript>();
         WallSpawnerScriptLeft.StartingPoint = ProceduralHighway.transform.position;
         WallSpawnerScriptLeft.isLeftSide = true;
         ProceduralHighway.transform.parent = this.transform;
         // Right Wall
-        ProceduralHighway = Instantiate(WallPrefab, new Vector3(this.transform.position.x - 80, 0, this.transform.position.z - 8), Quaternion.identity);
+        ProceduralHighway = Instantiate(WallPrefab, new Vector3(this.transform.position.x - 80, 0, this.transform.position.z - 10), Quaternion.identity);
         WallSpawnerScript WallSpawnerScriptRight = ProceduralHighway.GetComponent<WallSpawnerScript>();
         WallSpawnerScriptRight.StartingPoint = ProceduralHighway.transform.position;
         WallSpawnerScriptRight.isLeftSide = false;

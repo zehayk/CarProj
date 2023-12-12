@@ -10,7 +10,7 @@ public class CurvedRoadPiece : MonoBehaviour
 {
     public Vector3 startPoint;
     public Vector3 endPoint;
-    public float roadWidth = 4f;
+    public float roadWidth = 5f;
     public int segments = 10;
     public Material roadMaterial;
     private GameObject previousRoad;
