@@ -8,7 +8,7 @@ public class ProceduralHighwayScript : MonoBehaviour
     public GameObject RoadPrefab;
     private GameObject player;
     public GameObject WallPrefab;
-    private List<GameObject> lanes = new List<GameObject>();
+    public List<GameObject> lanes = new List<GameObject>(); 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");

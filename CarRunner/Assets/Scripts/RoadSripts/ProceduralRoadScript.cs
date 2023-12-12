@@ -38,7 +38,7 @@ public class ProceduralRoadScript : MonoBehaviour
         {
             AddEndSection();
         }
-        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 8f)
+        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 12f)
         {
 
             RemoveFirstRoadSection();
