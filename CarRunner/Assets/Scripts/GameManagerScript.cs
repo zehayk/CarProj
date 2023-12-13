@@ -10,8 +10,8 @@ public class GameManagerScript : MonoBehaviour
     private GameObject highwaySpawner;
     private List<GameObject> cars = new List<GameObject>();
 
-    public float spawnIntervalMin = 1f;
-    public float spawnIntervalMax = 4f;
+    public float spawnIntervalMin = 0.5f;
+    public float spawnIntervalMax = 3f;
 
     void Start()
     {
@@ -35,18 +35,19 @@ public class GameManagerScript : MonoBehaviour
     }
     void SpawnObject()
     {
+
         ProceduralHighwayScript highway = highwaySpawner.GetComponent<ProceduralHighwayScript>();
-        Vector3 position = new Vector3(player.transform.position.x + Random.Range(roadLength*0.2f, roadLength*2), 0.1f, highway.lanes[Random.Range(0, highway.lanes.Count - 1)].transform.position.z);
+        Vector3 position = new Vector3(player.transform.position.x + Random.Range(roadLength*8f, roadLength*10f), 0.1f, highway.lanes[Random.Range(0, highway.lanes.Count - 1)].transform.position.z);
 
         GameObject spawnedNPC = Instantiate(GetRandomCar(), position, Quaternion.Euler(0f, 90f, 0f));
+        spawnedNPC.AddComponent<NPCCarsBehavior>();
         cars.Add(spawnedNPC);
 
         Rigidbody npcRigidbody = spawnedNPC.GetComponent<Rigidbody>();
         if (npcRigidbody != null)
         {
-            float speed = 10f;
+            float speed = 20f;
             npcRigidbody.velocity = spawnedNPC.transform.forward * speed;
         }
-        spawnedNPC.AddComponent<DestroyCasesNPCCars>();
     }
 }

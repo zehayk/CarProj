@@ -34,11 +34,11 @@ public class ProceduralRoadScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Vector3.Distance(player.transform.position, LastPosition) < roadLength*12f)
+        if (Vector3.Distance(player.transform.position, LastPosition) < roadLength*15f)
         {
             AddEndSection();
         }
-        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 12f)
+        if (Vector3.Distance(player.transform.position, FirstPosition) >= roadLength * 15f)
         {
 
             RemoveFirstRoadSection();

@@ -78,10 +78,10 @@
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\TurboCharger.cs" />
     <Compile Include="Assets\Scripts\RoadSripts\ProceduralHighwayScript.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger.cs" />
+    <Compile Include="Assets\Scripts\NPCCarsBehavior.cs" />
     <Compile Include="Assets\Scripts\RoadSripts\SideWall.cs" />
     <Compile Include="Assets\Scripts\RoadSripts\CurvedRoadPiece.cs" />
     <Compile Include="Assets\Scripts\DestroyOnCollision.cs" />
-    <Compile Include="Assets\Scripts\DestroyCasesNPCCars.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\RealisticEngineSound_mobile.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Imports\RealisticEngineSound\Assets\Scripts\SuperCharger_mobile.cs" />
