@@ -35,19 +35,22 @@ public class GameManagerScript : MonoBehaviour
     }
     void SpawnObject()
     {
-
         ProceduralHighwayScript highway = highwaySpawner.GetComponent<ProceduralHighwayScript>();
-        Vector3 position = new Vector3(player.transform.position.x + Random.Range(roadLength*8f, roadLength*10f), 0.1f, highway.lanes[Random.Range(0, highway.lanes.Count - 1)].transform.position.z);
-
-        GameObject spawnedNPC = Instantiate(GetRandomCar(), position, Quaternion.Euler(0f, 90f, 0f));
-        spawnedNPC.AddComponent<NPCCarsBehavior>();
-        cars.Add(spawnedNPC);
-
-        Rigidbody npcRigidbody = spawnedNPC.GetComponent<Rigidbody>();
-        if (npcRigidbody != null)
+        if (highway.lanes.Count > 0)
         {
-            float speed = 20f;
-            npcRigidbody.velocity = spawnedNPC.transform.forward * speed;
+            Vector3 position = new Vector3(player.transform.position.x + Random.Range(roadLength * 8f, roadLength * 10f), 0.1f, highway.lanes[Random.Range(0, highway.lanes.Count)].transform.position.z);
+
+            GameObject spawnedNPC = Instantiate(GetRandomCar(), position, Quaternion.Euler(0f, 90f, 0f));
+            spawnedNPC.AddComponent<NPCCarsBehavior>();
+            cars.Add(spawnedNPC);
+
+            Rigidbody npcRigidbody = spawnedNPC.GetComponent<Rigidbody>();
+            if (npcRigidbody != null)
+            {
+                float speed = 20f;
+                npcRigidbody.velocity = spawnedNPC.transform.forward * speed;
+            }
         }
+        
     }
 }
