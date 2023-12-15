@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - MainRoadSpawner
   - NPC
+  - EnemyCop
   layers:
   - Default
   - TransparentFX

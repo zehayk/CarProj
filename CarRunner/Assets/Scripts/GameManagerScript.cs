@@ -44,6 +44,9 @@ public class GameManagerScript : MonoBehaviour
             spawnedNPC.AddComponent<NPCCarsBehavior>();
             cars.Add(spawnedNPC);
 
+            spawnedNPC.tag = "Enemy";
+            SetTagRecursively(spawnedNPC.transform, "Enemy");
+
             Rigidbody npcRigidbody = spawnedNPC.GetComponent<Rigidbody>();
             if (npcRigidbody != null)
             {
@@ -52,5 +55,16 @@ public class GameManagerScript : MonoBehaviour
             }
         }
         
+    }
+    void SetTagRecursively(Transform parent, string tag)
+    {
+        foreach (Transform child in parent)
+        {
+            // Set the tag for the child object
+            child.gameObject.tag = tag;
+
+            // Recursively set the tag for the child's children
+            SetTagRecursively(child, tag);
+        }
     }
 }

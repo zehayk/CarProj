@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
+    /*public GameObject explosion;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Enemy"))
         {
-            Destroy(collision.gameObject);
+            Instantiate(explosion, gameObject.transform);
+        }else if (collision.collider.CompareTag("EnemyCop"))
+        {
+            Instantiate(explosion, gameObject.transform);
         }
     }
 
@@ -16,7 +20,8 @@ public class DestroyOnCollision : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            // Destroy(gameObject);
+            Instantiate(explosion, gameObject.transform);
         }
-    }
+    }*/
 }

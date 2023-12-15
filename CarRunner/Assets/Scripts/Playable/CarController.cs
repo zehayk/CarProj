@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -17,13 +19,17 @@ public class CarController : MonoBehaviour
     private basicController Controls;
     private Camera mainCamera;
     public float MaxSpeed = 30f;
+    public Text speedText;
+    private bool enabledMotor = true;
 
+    public Text gameOverText;
     // Center of mass
     public Vector3 com;
     public Rigidbody rb;
 
     void Start()
     {
+        enabledMotor = true;
         Controls = new basicController();
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = com;
@@ -34,40 +40,74 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float motor = maxMotorTorque * Controls.rightMinusLeftTrig();
-        float brakes = maxBrakeTorque * Controls.leftShoulder();
-        float handBrake = maxHandBrakeTorque * Controls.westbutton();
-        float steering = maxSteeringAngle * Controls.leftStick();
         float speed = rb.velocity.magnitude;
-
-        foreach (AxleInfo axleInfo in axleInfos)
+        if (enabledMotor)
         {
-            if (axleInfo.steering)
-            {
-                axleInfo.leftWheel.steerAngle = steering;
-                axleInfo.rightWheel.steerAngle = steering;
-            }
+            float motor = maxMotorTorque * Controls.rightMinusLeftTrig();
+            float brakes = maxBrakeTorque * Controls.leftShoulder();
+            float handBrake = maxHandBrakeTorque * Controls.westbutton();
+            float steering = maxSteeringAngle * Controls.leftStick();
 
-            if (axleInfo.motor)
+            foreach (AxleInfo axleInfo in axleInfos)
             {
-                if (speed <= MaxSpeed)
+                if (axleInfo.steering)
                 {
-                    axleInfo.leftWheel.motorTorque = motor;
-                    axleInfo.rightWheel.motorTorque = motor;
+                    axleInfo.leftWheel.steerAngle = steering;
+                    axleInfo.rightWheel.steerAngle = steering;
                 }
+
+                if (axleInfo.motor)
+                {
+                    float currentSpeed = rb.velocity.magnitude;
+                    if (currentSpeed <= MaxSpeed)
+                    {
+                        axleInfo.leftWheel.motorTorque = motor;
+                        axleInfo.rightWheel.motorTorque = motor;
+                    }
+                    else
+                    {
+                        axleInfo.leftWheel.motorTorque = 0;
+                        axleInfo.rightWheel.motorTorque = 0;
+                    }
+                }
+
+                axleInfo.leftWheel.brakeTorque = brakes;
+                axleInfo.rightWheel.brakeTorque = brakes;
             }
 
-            axleInfo.leftWheel.brakeTorque = brakes;
-            axleInfo.rightWheel.brakeTorque = brakes;
+            axleInfos[0].rightWheel.brakeTorque = handBrake;
+            axleInfos[0].leftWheel.brakeTorque = handBrake;
+
         }
-
-        axleInfos[0].rightWheel.brakeTorque = handBrake;
-        axleInfos[0].leftWheel.brakeTorque = handBrake;
-
-        // Adjust camera distance based on speed
-
         Vector3 cameraDistance = Vector3.Lerp(startCamDistance, endCameraDistance, speed * cameraDistanceMultiplier);
         mainCamera.transform.localPosition = cameraDistance;
+
+        speedText.text = "Speed: " + speed.ToString("F2") + " m/s";
+        
+    }
+
+
+    public GameObject explosion;
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            enabledMotor = false;
+            Instantiate(explosion, gameObject.transform);
+            gameOverText.text = "GAME OVER\nYOU CRASHED";
+            Invoke("SwitchToNextScene", 5f);
+        }
+        else if (collision.collider.CompareTag("EnemyCop"))
+        {
+            enabledMotor = false;
+            Instantiate(explosion, gameObject.transform);
+            gameOverText.text = "GAME OVER\nCOP CAUGHT YOU";
+            Invoke("SwitchToNextScene", 5f);
+        }
+    }
+    private void SwitchToNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
 
