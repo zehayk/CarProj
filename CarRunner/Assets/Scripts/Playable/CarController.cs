@@ -89,6 +89,12 @@ public class CarController : MonoBehaviour
 
             axleInfos[0].rightWheel.brakeTorque = handBrake;
             axleInfos[0].leftWheel.brakeTorque = handBrake;
+            if(brakes >= 0.1)
+            {
+                Vector3 explosionPosition = new Vector3(gameObject.transform.position.x-2, gameObject.transform.position.y, gameObject.transform.position.z);
+                Instantiate(explosion, explosionPosition, Quaternion.identity);
+                
+            }
 
         }
         Vector3 cameraDistance = Vector3.Lerp(startCamDistance, endCameraDistance, speed * cameraDistanceMultiplier);
