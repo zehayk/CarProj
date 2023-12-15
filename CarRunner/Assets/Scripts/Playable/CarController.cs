@@ -20,7 +20,10 @@ public class CarController : MonoBehaviour
     private Camera mainCamera;
     public float MaxSpeed = 30f;
     public Text speedText;
+    public Text PointsText;
     private bool enabledMotor = true;
+    private float points = 0f;
+    private float startTime;
 
     public Text gameOverText;
     // Center of mass
@@ -29,6 +32,7 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
+        startTime = Time.time;
         enabledMotor = true;
         Controls = new basicController();
         rb = GetComponent<Rigidbody>();
@@ -38,6 +42,14 @@ public class CarController : MonoBehaviour
         mainCamera.transform.localPosition = new Vector3(0f, 2.5f, -4.75f);
     }
 
+    private void Update()
+    {
+        float speed = rb.velocity.magnitude;
+        float currentTime = Time.time;
+        float timeDifference = currentTime - startTime;
+        points += ((timeDifference * speed)/1000);
+        PointsText.text = points.ToString("F2") + "$";
+    }
     void FixedUpdate()
     {
         float speed = rb.velocity.magnitude;
@@ -82,8 +94,7 @@ public class CarController : MonoBehaviour
         Vector3 cameraDistance = Vector3.Lerp(startCamDistance, endCameraDistance, speed * cameraDistanceMultiplier);
         mainCamera.transform.localPosition = cameraDistance;
 
-        speedText.text = "Speed: " + speed.ToString("F2") + " m/s";
-        
+        speedText.text = "Speed: " + (speed * 3.6f).ToString("F0") + " Km/h";
     }
 
 
@@ -94,14 +105,14 @@ public class CarController : MonoBehaviour
         {
             enabledMotor = false;
             Instantiate(explosion, gameObject.transform);
-            gameOverText.text = "GAME OVER\nYOU CRASHED";
+            gameOverText.text = "GAME OVER\nYOU CRASHED\n"+points+ "$ WON";
             Invoke("SwitchToNextScene", 5f);
         }
         else if (collision.collider.CompareTag("EnemyCop"))
         {
             enabledMotor = false;
             Instantiate(explosion, gameObject.transform);
-            gameOverText.text = "GAME OVER\nCOP CAUGHT YOU";
+            gameOverText.text = "GAME OVER\nCOP CAUGHT YOU\n" + points + "$ WON";
             Invoke("SwitchToNextScene", 5f);
         }
     }

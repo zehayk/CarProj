@@ -15,6 +15,26 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
+        // Find all GameObjects with the specified tags
+        GameObject[] objectsWithTag1 = GameObject.FindGameObjectsWithTag("EnemyCop");
+        GameObject[] objectsWithTag2 = GameObject.FindGameObjectsWithTag("Enemy");
+
+        // Iterate through all combinations and disable collisions
+        foreach (GameObject obj1 in objectsWithTag1)
+        {
+            foreach (GameObject obj2 in objectsWithTag2)
+            {
+                Collider collider1 = obj1.GetComponent<Collider>();
+                Collider collider2 = obj2.GetComponent<Collider>();
+
+                if (collider1 != null && collider2 != null)
+                {
+                    Physics.IgnoreCollision(collider1, collider2);
+                }
+            }
+        }
+
+
         player = GameObject.FindGameObjectWithTag("Player");
         highwaySpawner = GameObject.FindGameObjectWithTag("MainRoadSpawner");
         for (int i = 0; i < 4; i++)
