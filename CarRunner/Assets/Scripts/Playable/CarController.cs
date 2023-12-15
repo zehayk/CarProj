@@ -210,21 +210,21 @@ public class GearBox
         switch (currentGear)
         {
             case 0: // this is reverse
-                return 40;
+                return 20;
             case 1:
-                return 30;
+                return 15;
             case 2:
-                return 60;
+                return 30;
             case 3:
-                return 90;
+                return 45;
             case 4:
-                return 120;
+                return 60;
             case 5:
-                return 150;
+                return 75;
             case 6:
-                return 180;
+                return 90;
             default:
-                return 0;
+                return 110;
         }
     }
 }
