@@ -66,13 +66,14 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(Input.GetKeyDown(KeyCode.Space));
         float speed = rb.velocity.magnitude;
         if (enabledMotor)
         {
-            float motor = maxMotorTorque * Controls.rightTrig() * ((gearBox.currentGear < 1) ? -1 : 1);
+            float motor = maxMotorTorque * Controls.throttle() * ((gearBox.currentGear < 1) ? -1 : 1);
             // float brakes = maxBrakeTorque * Controls.leftShoulder();
-            float brakes = maxBrakeTorque * Controls.leftTrig();
-            float handBrake = maxHandBrakeTorque * Controls.westbutton();
+            float brakes = maxBrakeTorque * Controls.brake();
+            float handBrake = maxHandBrakeTorque * Controls.handbrake();
             float steering = maxSteeringAngle * Controls.leftStick();
 
             
@@ -106,12 +107,6 @@ public class CarController : MonoBehaviour
 
             axleInfos[0].rightWheel.brakeTorque = handBrake;
             axleInfos[0].leftWheel.brakeTorque = handBrake;
-            if(brakes >= 0.1)
-            {
-                Vector3 explosionPosition = new Vector3(gameObject.transform.position.x-2, gameObject.transform.position.y, gameObject.transform.position.z);
-                Instantiate(explosion, explosionPosition, Quaternion.identity);
-                
-            }
 
         }
         Vector3 cameraDistance = Vector3.Lerp(startCamDistance, endCameraDistance, speed * cameraDistanceMultiplier);
@@ -176,14 +171,14 @@ public class basicController
     public bool isPresent() => gamepad != null;
 
     // public float rightMinusLeftTrig() => (isPresent()) ? gamepad.rightTrigger.ReadValue() - gamepad.leftTrigger.ReadValue() : Input.GetAxis("Vertical");
-    public float rightTrig() => (isPresent()) ? gamepad.rightTrigger.ReadValue() : Input.GetAxis("Vertical");
-    public float leftTrig() => (isPresent()) ? gamepad.leftTrigger.ReadValue() : Input.GetAxis("Vertical");
+    public float throttle() => (isPresent()) ? gamepad.rightTrigger.ReadValue() : ((Input.GetAxis("Vertical") > 0) ? Input.GetAxis("Vertical") : 0);
+    public float brake() => (isPresent()) ? gamepad.leftTrigger.ReadValue() : ((Input.GetAxis("Vertical") < 0) ? -1 * Input.GetAxis("Vertical") : 0);
     public float leftStick() => (isPresent()) ? gamepad.leftStick.x.ReadValue() : Input.GetAxis("Horizontal");
     // public int leftShoulder() => ((isPresent()) ? gamepad.leftShoulder.isPressed : Input.GetKey(KeyCode.Space)) ? 1 : 0;
-    public bool downShift() => (Input.GetKeyDown("q") || gamepad.leftShoulder.wasPressedThisFrame);
-    public bool upShift() => (Input.GetKeyDown("e") || gamepad.rightShoulder.wasPressedThisFrame);
+    public bool downShift() => (isPresent()) ? gamepad.leftShoulder.wasPressedThisFrame : Input.GetKeyDown("q");
+    public bool upShift() => (isPresent()) ? gamepad.rightShoulder.wasPressedThisFrame : Input.GetKeyDown("e");
     public float[] rightStick() => new float[] { (isPresent()) ? gamepad.rightStick.x.ReadValue() : Input.GetAxis("Mouse X"), (isPresent()) ? gamepad.rightStick.y.ReadValue() : Input.GetAxis("Mouse Y") };
-    public int westbutton() => (isPresent() && gamepad.buttonWest.isPressed) ? 1 : 0;
+    public int handbrake() => (isPresent() ? (gamepad.buttonWest.isPressed ? 1 : 0) : (Input.GetKeyDown("space") ? 1 : 0));
 }
 
 public class GearBox 
