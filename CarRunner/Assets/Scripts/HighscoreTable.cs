@@ -6,12 +6,26 @@ using UnityEngine.UI;
 
 public class HighscoreTable : MonoBehaviour
 {
+    public static HighscoreEntry instance;
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("GameManager already exists, destroying");
+            Destroy(this);
+        }
+        
+        DontDestroyOnLoad(this);  // IMPORT TO KEEP SO IT DOESNT DIE WHEN NEW SCENE IS LOADED
+
+
         entryContainer = transform.Find("highscoreEntryContainer");
         entryTemplate = entryContainer.Find("highscoreEntryTemplate");
 
@@ -40,8 +54,40 @@ public class HighscoreTable : MonoBehaviour
         {
             CreateHighscoreEntryTransform(highscores.highscoreEntryList[i], entryContainer, highscoreEntryTransformList);
         }
-
     }
+
+    // private void Awake()
+    // {
+    //     entryContainer = transform.Find("highscoreEntryContainer");
+    //     entryTemplate = entryContainer.Find("highscoreEntryTemplate");
+
+    //     entryTemplate.gameObject.SetActive(false);
+
+    //     //AddHighscoreEntry(0, "UNKNOWN");
+
+    //     string jsonString = PlayerPrefs.GetString("highscoreTable");
+    //     Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
+
+    //     // Sort entry list by Score
+    //     for (int i = 0; i < highscores.highscoreEntryList.Count; i++) {
+    //         for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++) {
+    //             if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score) {
+    //                 // Swap
+    //                 HighscoreEntry tmp = highscores.highscoreEntryList[i];
+    //                 highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
+    //                 highscores.highscoreEntryList[j] = tmp;
+    //             }
+    //         }
+    //     }
+
+    //     // only display top 5
+    //     highscoreEntryTransformList = new List<Transform>();
+    //     for (int i = 0; i < 5; i++)
+    //     {
+    //         CreateHighscoreEntryTransform(highscores.highscoreEntryList[i], entryContainer, highscoreEntryTransformList);
+    //     }
+
+    // }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
     {
@@ -117,5 +163,10 @@ public class HighscoreTable : MonoBehaviour
     {
         public int score;
         public string name;
+    }
+
+    public HighscoreTable GetInstance()
+    {
+        return instance;
     }
 }
