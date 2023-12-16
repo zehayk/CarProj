@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100783405360890}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114868818825704426
 MonoBehaviour:
@@ -95,7 +96,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   idlePitchCurve:
     serializedVersion: 2
     m_Curve:
@@ -119,7 +120,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   lowOnClip: {fileID: 8300000, guid: dea6a2a1eade44a42a01ea84e8f7197e, type: 3}
   lowVolCurve:
     serializedVersion: 2
@@ -153,7 +154,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   lowPitchCurve:
     serializedVersion: 2
     m_Curve:
@@ -177,7 +178,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   medOnClip: {fileID: 8300000, guid: b3018379abd70b74b9d862db447b0c95, type: 3}
   medVolCurve:
     serializedVersion: 2
@@ -211,7 +212,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   medPitchCurve:
     serializedVersion: 2
     m_Curve:
@@ -235,7 +236,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   highOnClip: {fileID: 8300000, guid: fa708b786c1193d49a2691131eb28572, type: 3}
   highVolCurve:
     serializedVersion: 2
@@ -269,7 +270,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   highPitchCurve:
     serializedVersion: 2
     m_Curve:
@@ -293,7 +294,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   maxRPMClip: {fileID: 8300000, guid: 9f2b5a5d6b6f2fb468cffbcc7cbde9e9, type: 3}
   maxRPMVolCurve:
     serializedVersion: 2
@@ -327,7 +328,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reversingClip: {fileID: 8300000, guid: 42869ef93e023564389fadecfa4a1091, type: 3}
   reversingVolCurve:
     serializedVersion: 2
@@ -361,7 +362,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reversingPitchCurve:
     serializedVersion: 2
     m_Curve:
@@ -385,6 +386,6 @@ MonoBehaviour:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   mainCamera: {fileID: 0}
   isCameraNear: 0

@@ -31,6 +31,8 @@ public class CarController : MonoBehaviour
     public Rigidbody rb;
     public GearBox gearBox = new GearBox();
 
+    public RealisticEngineSound_mobile CarEngine;
+
     void Start()
     {
         startTime = Time.time;
@@ -116,6 +118,9 @@ public class CarController : MonoBehaviour
         mainCamera.transform.localPosition = cameraDistance;
 
         speedText.text = "Speed: " + (speed * 3.6f).ToString("F0") + " Km/h" + " G: " + ((gearBox.currentGear < 1) ? "R" : gearBox.currentGear);
+
+        // Engine Red Line 7000
+        CarEngine.engineCurrentRPM = (speed / gearBox.maxSpeed()) * CarEngine.maxRPMLimit;
     }
 
 
