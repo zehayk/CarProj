@@ -189,7 +189,7 @@ public class basicController
 public class GearBox 
 {
     public int currentGear = 1;
-    public int maxGears = 5;
+    public int maxGears = 6;
     public GearBox()
     {
     }
@@ -229,7 +229,7 @@ public class GearBox
             case 6:
                 return 90;
             default:
-                return 110;
+                return 0;
         }
     }
 }
